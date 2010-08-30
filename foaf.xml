@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" encoding="UTF-8" href="rdf2html.xsl" version="1.0"?>
+<rdf:RDF
+	xml:lang="en"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:lang="http://purl.org/net/inkel/rdf/schemas/lang/1.1#"
+	xmlns:rel="http://purl.org/vocab/relationship/"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xml:base="http://github.com/lindenb/lindenb.github.com/raw/master/foaf.rdf"
+	>
+
+<foaf:Person rdf:ID="PierreLindenbaum">
+	<foaf:name>Pierre Lindenbaum</foaf:name>
+	<foaf:title>Dr</foaf:title>
+	<foaf:givenname>Pierre</foaf:givenname>
+	<foaf:family_name>Lindenbaum</foaf:family_name>
+	<foaf:nick>Pierrot</foaf:nick>
+	<foaf:mbox>plindenbaum@yahoo.fr</foaf:mbox>
+	<foaf:homepage rdf:resource="http://plindenbaum.blogspot.com/"/>
+	<foaf:img rdf:resource="#"/>
+	<lang:masters>fr</lang:masters>
+	<lang:masters>en</lang:masters>
+	<foaf:based_near>
+		<geo:Point geo:lat="47.21806" geo:long="-1.55278" />
+	</foaf:based_near>
+</foaf:Person>
+
+<foaf:Image rdf:about="http://www.gravatar.com/avatar/61200477cf8983809ec152f484750204">
+	<dc:title>My avatar</dc:title>
+</foaf:Image>
+
+</rdf:RDF>
