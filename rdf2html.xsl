@@ -20,6 +20,8 @@ Author:
 
 -->
 <xsl:output method="html"/>
+<xsl:variable name="primaryTopic" select="/rdf:RDF/foaf:PersonalProfileDocument[@rdf:about='']/foaf:primaryTopic/@rdf:resource"/>
+<xsl:variable name="me" select="/rdf:RDF/foaf:Person[concat('#',@rdf:ID) = $primaryTopic]"/>
 
 <xsl:template match="/">
 <xsl:apply-templates select="rdf:RDF"/>
@@ -28,6 +30,10 @@ Author:
 <xsl:template match="rdf:RDF">
 <html>
 <head>
+<title>
+<xsl:value-of select="$me/foaf:name"/>
+<xsl:text>'s FOAF Profile.</xsl:text>
+</title>
 <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
 <script type="text/javascript">
 /* timeline */
@@ -86,6 +92,11 @@ window.addEventListener("resize",windowResized,true);
 </script>
 </head>
 <body>
+<h1>
+<xsl:value-of select="$me/foaf:name"/>
+<xsl:text>'s FOAF Profile.</xsl:text>
+</h1>
+
 <xsl:apply-templates />
 </body>
 </html>
@@ -106,11 +117,22 @@ window.addEventListener("resize",windowResized,true);
 <h3>TimeLine</h3>
 <div id="my-timeline" style="height: 200px; border: 1px solid #aaa"></div>
 <h3>Accounts</h3>
+<div style="-moz-column-count: 3;
+            -moz-column-rule: 1px solid #bbb;
+            -moz-column-gap: 2em;">
 <xsl:apply-templates select="foaf:holdsAccount"/>
+</div>
 <h3>Education</h3>
 <xsl:apply-templates select="doac:education"/>
 <h3>Experiences</h3>
 <xsl:apply-templates select="doac:experience"/>
+<h3>Contacts</h3>
+<div style="-moz-column-count: 3;
+            -moz-column-rule: 1px solid #bbb;
+            -moz-column-gap: 2em;">
+<xsl:apply-templates select="foaf:knows/foaf:Person" mode="knows"/>
+</div>
+<xsl:apply-templates select="foaf:based_near"/>
 </xsl:template>
 
 <xsl:template match="doac:experience">
@@ -167,7 +189,20 @@ window.addEventListener("resize",windowResized,true);
 <xsl:template match="foaf:accountServiceHomepage">
 <xsl:element name="a">
 <xsl:attribute name="href"><xsl:value-of select="@rdf:resource"/></xsl:attribute>
-<xsl:apply-templates select="@rdf:resource"/>
+<xsl:choose>
+<xsl:when test="@rdf:resource='http://twitter.com'">
+	<img src="http://a1.twimg.com/a/1283191627/images/favicon.ico" alt="Twitter"/>
+</xsl:when>
+<xsl:when test="@rdf:resource='http://friendfeed.com'">
+	<img src="http://friendfeed.com/static/images/favicon.png" alt="Friendfeed"/>
+</xsl:when>
+<xsl:when test="@rdf:resource='http://www.linkedin.com'">
+	<img src="http://developer.linkedin.com/favicon.png" alt="LinkedIn"/>
+</xsl:when>
+<xsl:otherwise>
+	<xsl:apply-templates select="@rdf:resource"/>
+</xsl:otherwise>
+</xsl:choose>
 </xsl:element>
 </xsl:template>
 
@@ -202,6 +237,40 @@ window.addEventListener("resize",windowResized,true);
 	end: '<xsl:value-of select="."/>',
 </xsl:template>
 
+<xsl:template match="foaf:Person" mode="knows">
+	<xsl:value-of select="foaf:name"/>
+</xsl:template>
 
+<xsl:template match="foaf:based_near">
+<h3>Map</h3>
+<xsl:apply-templates select="geo:Point"/>
+</xsl:template>
+
+<xsl:template match="geo:Point">
+<div style="text-align:center;">
+<xsl:variable name="gmap">
+  <xsl:value-of select="concat('http://maps.google.com/maps?ie=UTF8&amp;ll=',geo:lat,',',geo:long,'&amp;spn=0.006035,0.013154&amp;t=h&amp;z=16')"/>
+</xsl:variable>
+<xsl:element name="iframe">
+	<xsl:attribute name="marginheight">5</xsl:attribute>
+	<xsl:attribute name="marginwidth">5</xsl:attribute>
+	<xsl:attribute name="frameborder">0</xsl:attribute>
+	<xsl:attribute name="scrolling">no</xsl:attribute>
+	<xsl:attribute name="height">350</xsl:attribute>
+	<xsl:attribute name="width">600</xsl:attribute>
+	<xsl:attribute name="src"><xsl:value-of select="concat($gmap,'&amp;output=embed')"/></xsl:attribute>
+</xsl:element>
+<br/>
+<xsl:element name="a">
+<xsl:attribute name="target">_blank</xsl:attribute>
+<xsl:attribute name="href"><xsl:value-of select="concat($gmap,'&amp;source=embed')"/></xsl:attribute>
+View Larger Map
+</xsl:element>
+</div>
+
+
+
+
+</xsl:template>
 
 </xsl:stylesheet>

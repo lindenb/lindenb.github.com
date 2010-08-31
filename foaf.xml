@@ -9,11 +9,17 @@
 	xmlns:lang="http://purl.org/net/inkel/rdf/schemas/lang/1.1#"
 	xmlns:rel="http://purl.org/vocab/relationship/"
 	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
-	xml:base="http://github.com/lindenb/lindenb.github.com/raw/master/foaf.rdf"
+	xml:base="http://lindenb.github.com/foaf.rdf"
 	xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
 	xmlns:doac="http://ramonantonio.net/doac/0.1/"
 	xmlns:doap="http://usefulinc.com/ns/doap#"
 	>
+
+<foaf:PersonalProfileDocument rdf:about="">
+	<foaf:maker rdf:resource="#PierreLindenbaum"/>
+	<foaf:primaryTopic rdf:resource="#PierreLindenbaum"/>
+</foaf:PersonalProfileDocument>	
+	
 	
 <foaf:Person rdf:ID="PierreLindenbaum">
 	<foaf:name>Pierre Lindenbaum</foaf:name>
@@ -23,40 +29,39 @@
 	<foaf:nick>Pierrot</foaf:nick>
 	<foaf:mbox>plindenbaum@yahoo.fr</foaf:mbox>
 	<foaf:homepage rdf:resource="http://plindenbaum.blogspot.com/"/>
-	<foaf:img rdf:resource="#"/>
+	<foaf:img rdf:resource="http://www.gravatar.com/avatar/61200477cf8983809ec152f484750204"/>
 	<lang:masters>fr</lang:masters>
 	<lang:masters>en</lang:masters>
 	<foaf:based_near>
-		<geo:Point geo:lat="47.21806" geo:long="-1.55278" />
+		<geo:Point>
+			<geo:lat>47.208899</geo:lat>
+			<geo:long>-1.553321</geo:long>
+		</geo:Point>
 	</foaf:based_near>
 	
 	
-	<foaf:holdsAccount>
-		<foaf:OnlineAccount rdf:about="http://friendfeed.com/yokofakun">
-			<foaf:accountName>yokofakun</foaf:accountName>
-			<foaf:accountServiceHomepage rdf:resource="http://friendfeed.com"/>
-		</foaf:OnlineAccount>
-	</foaf:holdsAccount>
-	
-	<foaf:holdsAccount>
-		<foaf:OnlineAccount rdf:about="http://twitter.com/yokofakun">
-			<foaf:accountName>yokofakun</foaf:accountName>
-			<foaf:accountServiceHomepage rdf:resource="http://twitter.com"/>
-		</foaf:OnlineAccount>
-	</foaf:holdsAccount>
+	<doac:experience>
+		<doac:Experience>
+			<doac:title>Bioinformatician at INSERM U915</doac:title>
+			<doac:location>INSERM U915, Nantes France</doac:location>
+			<doac:date-starts>2010-05-01</doac:date-starts>
+			<doac:activity>NGS data</doac:activity>
+		</doac:Experience>
+	</doac:experience>	
 	
 	<doac:experience>
 		<doac:Experience>
-			<doac:title>Bioinformatician</doac:title>
+			<doac:title>Bioinformatician at CEPH</doac:title>
 			<doac:location>CEPH - Fondation Jean Dausset</doac:location>
 			<doac:date-starts>2008-09-01</doac:date-starts>
+			<doac:date-ends>2010-04-01</doac:date-ends>
 			<doac:activity>Development of tools to help the scientists to manage and mind their data.</doac:activity>
 		</doac:Experience>
 	</doac:experience>
 	
 	<doac:experience>
 		<doac:Experience>
-			<doac:title>Director of Bioinformatics</doac:title>
+			<doac:title>Director of Bioinformatics at Integragen</doac:title>
 			<doac:location>Integragen SA</doac:location>
 			<doac:date-starts>2006-11-01</doac:date-starts>
 			<doac:date-ends>2008-09-01</doac:date-ends>
@@ -66,7 +71,7 @@
 	
 	<doac:experience>
 		<doac:Experience>
-			<doac:title>Scientific Developer</doac:title>
+			<doac:title>Scientific Developer at Integragen</doac:title>
 			<doac:location>Integragen</doac:location>
 			<doac:date-starts>2001-02-01</doac:date-starts>
 			<doac:date-ends>2006-01-01</doac:date-ends>
@@ -76,7 +81,7 @@
 	
 	<doac:experience>
 		<doac:Experience>
-			<doac:title>Scientific Developer</doac:title>
+			<doac:title>Scientific Developer at CNG</doac:title>
 			<doac:location>National Center of Genotyping</doac:location>
 			<doac:date-starts>2000-03-01</doac:date-starts>
 			<doac:date-ends>2001-03-01</doac:date-ends>
@@ -87,7 +92,7 @@
 	<doac:education>
 		<doac:Education>
 			<foaf:organization>Université Paris Sud (Paris XI)</foaf:organization>
-			<doac:title>PhD</doac:title>
+			<doac:title>PhD of Virology</doac:title>
 			<doac:date-starts>1996-01-01</doac:date-starts>
 			<doac:date-ends>2000-12-31</doac:date-ends>
 			<doac:subject>Studied protein-protein interactions between ROTAVIRUS and the host cell. Wrote a tool called CloneIt selecting restriction enzymes for subcloning strategies. • PMID:15047801 Vitour D, Lindenbaum P, Vende P, Becker MM, Poncet D. RoXaN, a novel cellular protein containing TPR, LD, and zinc finger motifs, forms a ternary complex with eukaryotic initiation factor 4G and rotavirus NSP3. J Virol. 2004 Apr;78(8):3851-62. • PMID:9682060 Lindenbaum P. CloneIt: finding cloning strategies, in-frame deletions and frameshifts. Bioinformatics. 1998 Jun;14(5):465-6. • PMID:8985320 Poncet D, Lindenbaum P, L'Haridon R, Cohen J. In vivo and in vitro phosphorylation of rotavirus NSP5 correlates with its localization in viroplasms. J Virol. 1997 Jan;71(1):34-41.</doac:subject>
@@ -97,7 +102,7 @@
 	<doac:education>
 		<doac:Education>
 			<foaf:organization>Université Paris Sud (Paris XI)</foaf:organization>
-			<doac:title>DEA</doac:title>
+			<doac:title>DEA of Virology</doac:title>
 			<doac:date-starts>1995-01-01</doac:date-starts>
 			<doac:date-ends>1996-12-31</doac:date-ends>
 		</doac:Education>
@@ -125,12 +130,73 @@
 			<foaf:accountServiceHomepage rdf:resource="http://twitter.com"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
+	
 	<foaf:holdsAccount>
 		<foaf:OnlineAccount rdf:about="http://www.linkedin.com/ppl/webprofile?id=1510707">
 			<foaf:accountServiceHomepage rdf:resource="http://www.linkedin.com"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://www.delicious.com/lindenb">
+			<foaf:accountName>lindenb</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://www.delicious.com"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://biostar.stackexchange.com/users/30">
+			<foaf:accountName>30</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://biostar.stackexchange.com/"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://stackoverflow.com/users/58082">
+			<foaf:accountName>58082</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://stackoverflow.com/"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://en.wikipedia.org/wiki/User:Plindenbaum">
+			<foaf:accountName>User:Plindenbaum</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://en.wikipedia.org"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://www.slideshare.net/lindenb">
+			<foaf:accountServiceHomepage rdf:resource="http://www.slideshare.net"/>
+			<foaf:accountName>lindenb</foaf:accountName>
+			<foaf:accountProfilePage rdf:resource="http://www.slideshare.net/lindenb"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+
+	
+	<foaf:knows>
+		<foaf:Person rdf:about="http://egonw.github.com/">
+			<foaf:name>Egon Willighagen</foaf:name>
+		</foaf:Person>
+	</foaf:knows>
+	
+	<foaf:knows>
+		<foaf:Person rdf:about="http://github.com/joergkurtwegner/snippets/raw/master/xml/foaf.xml">
+			<foaf:name>Joerg Kurt Wegner</foaf:name>
+		</foaf:Person>
+	</foaf:knows>
+	
+	
+	<foaf:knows>
+		<foaf:Person rdf:ID="deepaksingh">
+			<foaf:name>Deepak Singh</foaf:name>
+			<foaf:title>PhD</foaf:title>
+			<foaf:homepage rdf:resource="http://mndoci.com"/>
+			<foaf:weblog rdf:resource="http://mndoci.com"/>
+			<foaf:mbox_sha1sum>c8461ca04507e09204a3bc169ee8a18c4870cf6d</foaf:mbox_sha1sum>
+		</foaf:Person>
+	</foaf:knows>
+
 	
 </foaf:Person>
 
