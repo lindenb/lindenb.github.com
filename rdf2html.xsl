@@ -259,6 +259,7 @@ window.addEventListener("resize",windowResized,true);
 	<xsl:attribute name="height">350</xsl:attribute>
 	<xsl:attribute name="width">600</xsl:attribute>
 	<xsl:attribute name="src"><xsl:value-of select="concat($gmap,'&amp;output=embed')"/></xsl:attribute>
+<xsl:text> </xsl:text>
 </xsl:element>
 <br/>
 <xsl:element name="a">
