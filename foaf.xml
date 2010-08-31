@@ -10,8 +10,11 @@
 	xmlns:rel="http://purl.org/vocab/relationship/"
 	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	xml:base="http://github.com/lindenb/lindenb.github.com/raw/master/foaf.rdf"
+	xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+	xmlns:doac="http://ramonantonio.net/doac/0.1/"
+	xmlns:doap="http://usefulinc.com/ns/doap#"
 	>
-
+	
 <foaf:Person rdf:ID="PierreLindenbaum">
 	<foaf:name>Pierre Lindenbaum</foaf:name>
 	<foaf:title>Dr</foaf:title>
@@ -26,6 +29,109 @@
 	<foaf:based_near>
 		<geo:Point geo:lat="47.21806" geo:long="-1.55278" />
 	</foaf:based_near>
+	
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://friendfeed.com/yokofakun">
+			<foaf:accountName>yokofakun</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://friendfeed.com"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://twitter.com/yokofakun">
+			<foaf:accountName>yokofakun</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://twitter.com"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<doac:experience>
+		<doac:Experience>
+			<doac:title>Bioinformatician</doac:title>
+			<doac:location>CEPH - Fondation Jean Dausset</doac:location>
+			<doac:date-starts>2008-09-01</doac:date-starts>
+			<doac:activity>Development of tools to help the scientists to manage and mind their data.</doac:activity>
+		</doac:Experience>
+	</doac:experience>
+	
+	<doac:experience>
+		<doac:Experience>
+			<doac:title>Director of Bioinformatics</doac:title>
+			<doac:location>Integragen SA</doac:location>
+			<doac:date-starts>2006-11-01</doac:date-starts>
+			<doac:date-ends>2008-09-01</doac:date-ends>
+			<doac:activity>Scientific Developer (JAVA/C++). In charge of database management, software development, technical &amp; scientific survey.</doac:activity>
+		</doac:Experience>
+	</doac:experience>
+	
+	<doac:experience>
+		<doac:Experience>
+			<doac:title>Scientific Developer</doac:title>
+			<doac:location>Integragen</doac:location>
+			<doac:date-starts>2001-02-01</doac:date-starts>
+			<doac:date-ends>2006-01-01</doac:date-ends>
+			<doac:activity>Responsible for the design and implementation of a software environment for information visualization of microarray CGH/GHip and public databases datas. Tools in C++ and JAVA for handling and browsing genomic datas. • PMID: 16027742 Philippi A, Roschmann E, Tores F, Lindenbaum P, Benajou A, Germain-Leclerc L, Marcaillou C, Fontaine K, Vanpeene M, Roy S, Maillard S, Decaulne V, Saraiva JP, Brooks P, Rousseau F, Hager J. Haplotypes in the gene encoding protein kinase c-beta (PRKCB1) on chromosome 16 are associated with autism. Mol Psychiatry. 2005 Jul 19</doac:activity>
+		</doac:Experience>
+	</doac:experience>
+	
+	<doac:experience>
+		<doac:Experience>
+			<doac:title>Scientific Developer</doac:title>
+			<doac:location>National Center of Genotyping</doac:location>
+			<doac:date-starts>2000-03-01</doac:date-starts>
+			<doac:date-ends>2001-03-01</doac:date-ends>
+			<doac:activity>In charge of creating a software used to design genotyping by mass spectrometry in multiplex condition (GOOD-Assay). Database management.</doac:activity>
+		</doac:Experience>
+	</doac:experience>
+	
+	<doac:education>
+		<doac:Education>
+			<foaf:organization>Université Paris Sud (Paris XI)</foaf:organization>
+			<doac:title>PhD</doac:title>
+			<doac:date-starts>1996-01-01</doac:date-starts>
+			<doac:date-ends>2000-12-31</doac:date-ends>
+			<doac:subject>Studied protein-protein interactions between ROTAVIRUS and the host cell. Wrote a tool called CloneIt selecting restriction enzymes for subcloning strategies. • PMID:15047801 Vitour D, Lindenbaum P, Vende P, Becker MM, Poncet D. RoXaN, a novel cellular protein containing TPR, LD, and zinc finger motifs, forms a ternary complex with eukaryotic initiation factor 4G and rotavirus NSP3. J Virol. 2004 Apr;78(8):3851-62. • PMID:9682060 Lindenbaum P. CloneIt: finding cloning strategies, in-frame deletions and frameshifts. Bioinformatics. 1998 Jun;14(5):465-6. • PMID:8985320 Poncet D, Lindenbaum P, L'Haridon R, Cohen J. In vivo and in vitro phosphorylation of rotavirus NSP5 correlates with its localization in viroplasms. J Virol. 1997 Jan;71(1):34-41.</doac:subject>
+		</doac:Education>
+	</doac:education>
+	
+	<doac:education>
+		<doac:Education>
+			<foaf:organization>Université Paris Sud (Paris XI)</foaf:organization>
+			<doac:title>DEA</doac:title>
+			<doac:date-starts>1995-01-01</doac:date-starts>
+			<doac:date-ends>1996-12-31</doac:date-ends>
+		</doac:Education>
+	</doac:education>
+	
+	<doac:education>
+		<doac:Education>
+			<foaf:organization>Université Paris Sud (Paris XI)</foaf:organization>
+			<doac:title>Maitrise</doac:title>
+			<doac:date-starts>1993-01-01</doac:date-starts>
+			<doac:date-ends>1994-12-31</doac:date-ends>
+		</doac:Education>
+	</doac:education>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://friendfeed.com/yokofakun">
+			<foaf:accountName>yokofakun</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://friendfeed.com"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://twitter.com/yokofakun">
+			<foaf:accountName>yokofakun</foaf:accountName>
+			<foaf:accountServiceHomepage rdf:resource="http://twitter.com"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://www.linkedin.com/ppl/webprofile?id=1510707">
+			<foaf:accountServiceHomepage rdf:resource="http://www.linkedin.com"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	
 </foaf:Person>
 
 <foaf:Image rdf:about="http://www.gravatar.com/avatar/61200477cf8983809ec152f484750204">
