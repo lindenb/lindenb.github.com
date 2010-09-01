@@ -11,6 +11,10 @@
 	xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
 	xmlns:doac="http://ramonantonio.net/doac/0.1/"
 	xmlns:doap="http://usefulinc.com/ns/doap#"
+	xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+	xmlns:bibo="http://purl.org/ontology/bibo/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	version='1.0'>
 <!--
 
@@ -34,6 +38,20 @@ Author:
 <xsl:value-of select="$me/foaf:name"/>
 <xsl:text>'s FOAF Profile.</xsl:text>
 </title>
+<style  type="text/css">
+body	{
+	background-image: -moz-linear-gradient(top, rgb(40,40,40),rgb(230,230,230));
+	}
+
+#page	{
+	background-color:white;
+	margin:20px;
+	padding:10px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	}
+
+</style>
 <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
 <script type="text/javascript">
 /* timeline */
@@ -47,6 +65,10 @@ wikiSection: "My Timeline",
 events : [
 	<xsl:for-each select="//doac:Experience|//doac:Education">
 	<xsl:if test="position()!=1">,</xsl:if>
+	<xsl:apply-templates select="." mode="json"/>
+        </xsl:for-each>
+        <xsl:for-each select="//bibo:Article">
+	<xsl:text>,</xsl:text>
 	<xsl:apply-templates select="." mode="json"/>
         </xsl:for-each>
         ]
@@ -92,12 +114,14 @@ window.addEventListener("resize",windowResized,true);
 </script>
 </head>
 <body>
+<div id="page">
 <h1>
 <xsl:value-of select="$me/foaf:name"/>
 <xsl:text>'s FOAF Profile.</xsl:text>
 </h1>
 
 <xsl:apply-templates />
+</div>
 </body>
 </html>
 </xsl:template>
@@ -126,6 +150,10 @@ window.addEventListener("resize",windowResized,true);
 <xsl:apply-templates select="doac:education"/>
 <h3>Experiences</h3>
 <xsl:apply-templates select="doac:experience"/>
+<h3>Publications</h3>
+<dl>
+<xsl:apply-templates select="foaf:made/bibo:Article"/>
+</dl>
 <h3>Contacts</h3>
 <div style="-moz-column-count: 3;
             -moz-column-rule: 1px solid #bbb;
@@ -268,10 +296,23 @@ window.addEventListener("resize",windowResized,true);
 View Larger Map
 </xsl:element>
 </div>
-
-
-
-
 </xsl:template>
+
+<xsl:template match="bibo:Article">
+<dt>
+<xsl:value-of select="dc:title"/>
+</dt>
+</xsl:template>
+
+<xsl:template match="bibo:Article" mode="json">
+	{
+	start: '<xsl:value-of select="dc:date"/>',
+        title: '<xsl:apply-templates select="dc:title"/>',
+        description: '<xsl:apply-templates select="dc:title"/>',
+        image: 'http://www.ncbi.nlm.nih.gov/coreweb/images/icons/PubMed.gif',
+        link:'<xsl:value-of select="@rdf:about"/>'
+        }
+</xsl:template>
+
 
 </xsl:stylesheet>

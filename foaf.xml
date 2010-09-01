@@ -13,6 +13,10 @@
 	xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
 	xmlns:doac="http://ramonantonio.net/doac/0.1/"
 	xmlns:doap="http://usefulinc.com/ns/doap#"
+	xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+	xmlns:bibo="http://purl.org/ontology/bibo/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	>
 
 <foaf:PersonalProfileDocument rdf:about="">
@@ -173,6 +177,14 @@
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://network.nature.com/profile/lindenb">
+			<foaf:accountServiceHomepage rdf:resource="http://network.nature.com"/>
+			<foaf:accountName>lindenb</foaf:accountName>
+			<foaf:accountProfilePage rdf:resource="http://network.nature.com/profile/lindenb"/>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
 	
 	<foaf:knows>
 		<foaf:Person rdf:about="http://egonw.github.com/">
@@ -197,6 +209,1012 @@
 		</foaf:Person>
 	</foaf:knows>
 
+	<foaf:made>
+		<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/19755503">
+			<bibo:pmid>19755503</bibo:pmid>
+			<owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:19755503"/>
+			<dc:title>The Gene Wiki: community intelligence applied to human gene annotation.</dc:title>
+			<dc:date>2010-01</dc:date>
+			<dcterms:isPartOf>
+				<bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]0411011">
+					<bibo:eissn>1362-4962</bibo:eissn>
+					<dc:title>Nucleic acids research</dc:title>
+					<bibo:shortTitle>Nucleic Acids Res.</bibo:shortTitle>
+				</bibo:Journal>
+			</dcterms:isPartOf>
+			<bibo:volume>38</bibo:volume>
+			<bibo:issue>Database issue</bibo:issue>
+			<bibo:pages>D633-9</bibo:pages>
+			<bibo:authorList>
+				<rdf:List>
+					<rdf:first>
+						<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Huss%20JW%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+							<foaf:name>Jon W  Huss</foaf:name>
+							<foaf:title>Dr</foaf:title>
+							<foaf:firstName>Jon W</foaf:firstName>
+							<foaf:family_name>Huss</foaf:family_name>
+						</foaf:Person>
+					</rdf:first>
+					<rdf:rest>
+						<rdf:List>
+							<rdf:first>
+								<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Lindenbaum%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+									<foaf:name>Pierre  Lindenbaum</foaf:name>
+									<foaf:title>Dr</foaf:title>
+									<foaf:firstName>Pierre</foaf:firstName>
+									<foaf:family_name>Lindenbaum</foaf:family_name>
+								</foaf:Person>
+							</rdf:first>
+							<rdf:rest>
+								<rdf:List>
+									<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Martone%20M%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Michael  Martone</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Michael</foaf:firstName>
+										<foaf:family_name>Martone</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19755503"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Roberts%20D%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Donabel  Roberts</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Donabel</foaf:firstName>
+										<foaf:family_name>Roberts</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19755503"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Pizarro%20A%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Angel  Pizarro</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Angel</foaf:firstName>
+										<foaf:family_name>Pizarro</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19755503"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Valafar%20F%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Faramarz  Valafar</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Faramarz</foaf:firstName>
+										<foaf:family_name>Valafar</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19755503"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Hogenesch%20JB%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>John B  Hogenesch</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>John B</foaf:firstName>
+										<foaf:family_name>Hogenesch</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19755503"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Su%20AI%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Andrew I  Su</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Andrew I</foaf:firstName>
+										<foaf:family_name>Su</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19755503"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</rdf:rest>
+			</rdf:List>
+		</rdf:rest>
+	</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</bibo:authorList>
+<dcterms:language>eng</dcterms:language>
+<dc:subject>Access to Information</dc:subject>
+<dc:subject>Computational Biology</dc:subject>
+<dc:subject>Databases, Genetic</dc:subject>
+<dc:subject>Databases, Nucleic Acid</dc:subject>
+<dc:subject>Databases, Protein</dc:subject>
+<dc:subject>Genetics</dc:subject>
+<dc:subject>Humans</dc:subject>
+<dc:subject>Information Storage and Retrieval</dc:subject>
+<dc:subject>Internet</dc:subject>
+<dc:subject>Models, Genetic</dc:subject>
+<dc:subject>Protein Interaction Mapping</dc:subject>
+<dc:subject>Software</dc:subject>
+</bibo:Article>
+
+</foaf:made>
+<foaf:made>
+<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/19331686">
+	<bibo:pmid>19331686</bibo:pmid>
+	<owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:19331686"/>
+	<dc:title>Robust physical methods that enrich genomic regions identical by descent for linkage studies: confirmation of a locus for osteogenesis imperfecta.</dc:title>
+	<dc:date>2009</dc:date>
+	<dcterms:isPartOf>
+		<bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]100966978">
+			<bibo:eissn>1471-2156</bibo:eissn>
+			<dc:title>BMC genetics</dc:title>
+			<bibo:shortTitle>BMC Genet.</bibo:shortTitle>
+		</bibo:Journal>
+	</dcterms:isPartOf>
+	<bibo:volume>10</bibo:volume>
+	<bibo:pages>16</bibo:pages>
+	<bibo:authorList>
+		<rdf:List>
+			<rdf:first>
+				<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Brooks%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					<foaf:name>Peter  Brooks</foaf:name>
+					<foaf:title>Dr</foaf:title>
+					<foaf:firstName>Peter</foaf:firstName>
+					<foaf:family_name>Brooks</foaf:family_name>
+					<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+				</foaf:Person>
+			</rdf:first>
+			<rdf:rest>
+				<rdf:List>
+					<rdf:first>
+						<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Marcaillou%20C%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+							<foaf:name>Charles  Marcaillou</foaf:name>
+							<foaf:title>Dr</foaf:title>
+							<foaf:firstName>Charles</foaf:firstName>
+							<foaf:family_name>Marcaillou</foaf:family_name>
+							<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+						</foaf:Person>
+					</rdf:first>
+					<rdf:rest>
+						<rdf:List>
+							<rdf:first>
+								<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Vanpeene%20M%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+									<foaf:name>Maud  Vanpeene</foaf:name>
+									<foaf:title>Dr</foaf:title>
+									<foaf:firstName>Maud</foaf:firstName>
+									<foaf:family_name>Vanpeene</foaf:family_name>
+									<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+								</foaf:Person>
+							</rdf:first>
+							<rdf:rest>
+								<rdf:List>
+									<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Saraiva%20JP%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Jean-Paul  Saraiva</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Jean-Paul</foaf:firstName>
+										<foaf:family_name>Saraiva</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Stockholm%20D%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Daniel  Stockholm</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Daniel</foaf:firstName>
+										<foaf:family_name>Stockholm</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Francke%20S%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Stephan  Francke</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Stephan</foaf:firstName>
+										<foaf:family_name>Francke</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Favis%20R%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Reyna  Favis</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Reyna</foaf:firstName>
+										<foaf:family_name>Favis</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Cohen%20N%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Nadine  Cohen</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Nadine</foaf:firstName>
+										<foaf:family_name>Cohen</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Rousseau%20F%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Francis  Rousseau</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Francis</foaf:firstName>
+										<foaf:family_name>Rousseau</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Tores%20F%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Frédéric  Tores</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Frédéric</foaf:firstName>
+										<foaf:family_name>Tores</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Lindenbaum%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Pierre  Lindenbaum</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Pierre</foaf:firstName>
+										<foaf:family_name>Lindenbaum</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Hager%20J%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Jörg  Hager</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Jörg</foaf:firstName>
+										<foaf:family_name>Hager</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Philippi%20A%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Anne  Philippi</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Anne</foaf:firstName>
+										<foaf:family_name>Philippi</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/19331686"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</rdf:rest>
+			</rdf:List>
+		</rdf:rest>
+	</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</bibo:authorList>
+<dcterms:language>eng</dcterms:language>
+<dc:subject>Chromosome Mapping</dc:subject>
+<dc:subject>Collagen</dc:subject>
+<dc:subject>DNA Mutational Analysis</dc:subject>
+<dc:subject>Genetic Markers</dc:subject>
+<dc:subject>Humans</dc:subject>
+<dc:subject>Oligonucleotide Array Sequence Analysis</dc:subject>
+<dc:subject>Osteogenesis Imperfecta</dc:subject>
+<dc:subject>Pedigree</dc:subject>
+<dc:subject>Phenotype</dc:subject>
+</bibo:Article>
+</foaf:made>
+<foaf:made>
+<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/18053270">
+	<bibo:pmid>18053270</bibo:pmid>
+	<owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18053270"/>
+	<dc:title>Association of autism with polymorphisms in the paired-like homeodomain transcription factor 1 (PITX1) on chromosome 5q31: a candidate gene analysis.</dc:title>
+	<dc:date>2007</dc:date>
+	<dcterms:isPartOf>
+		<bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]100968552">
+			<bibo:eissn>1471-2350</bibo:eissn>
+			<dc:title>BMC medical genetics</dc:title>
+			<bibo:shortTitle>BMC Med. Genet.</bibo:shortTitle>
+		</bibo:Journal>
+	</dcterms:isPartOf>
+	<bibo:volume>8</bibo:volume>
+	<bibo:pages>74</bibo:pages>
+	<bibo:authorList>
+		<rdf:List>
+			<rdf:first>
+				<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Philippi%20A%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					<foaf:name>Anne  Philippi</foaf:name>
+					<foaf:title>Dr</foaf:title>
+					<foaf:firstName>Anne</foaf:firstName>
+					<foaf:family_name>Philippi</foaf:family_name>
+					<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+				</foaf:Person>
+			</rdf:first>
+			<rdf:rest>
+				<rdf:List>
+					<rdf:first>
+						<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Tores%20F%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+							<foaf:name>Frédéric  Tores</foaf:name>
+							<foaf:title>Dr</foaf:title>
+							<foaf:firstName>Frédéric</foaf:firstName>
+							<foaf:family_name>Tores</foaf:family_name>
+							<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+						</foaf:Person>
+					</rdf:first>
+					<rdf:rest>
+						<rdf:List>
+							<rdf:first>
+								<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Carayol%20J%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+									<foaf:name>Jérome  Carayol</foaf:name>
+									<foaf:title>Dr</foaf:title>
+									<foaf:firstName>Jérome</foaf:firstName>
+									<foaf:family_name>Carayol</foaf:family_name>
+									<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+								</foaf:Person>
+							</rdf:first>
+							<rdf:rest>
+								<rdf:List>
+									<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Rousseau%20F%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Francis  Rousseau</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Francis</foaf:firstName>
+										<foaf:family_name>Rousseau</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Letexier%20M%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Mélanie  Letexier</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Mélanie</foaf:firstName>
+										<foaf:family_name>Letexier</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Roschmann%20E%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Elke  Roschmann</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Elke</foaf:firstName>
+										<foaf:family_name>Roschmann</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Lindenbaum%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Pierre  Lindenbaum</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Pierre</foaf:firstName>
+										<foaf:family_name>Lindenbaum</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Benajjou%20A%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Abdel  Benajjou</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Abdel</foaf:firstName>
+										<foaf:family_name>Benajjou</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Fontaine%20K%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Karine  Fontaine</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Karine</foaf:firstName>
+										<foaf:family_name>Fontaine</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Vazart%20C%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Céline  Vazart</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Céline</foaf:firstName>
+										<foaf:family_name>Vazart</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Gesnouin%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Philippe  Gesnouin</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Philippe</foaf:firstName>
+										<foaf:family_name>Gesnouin</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Brooks%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Peter  Brooks</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Peter</foaf:firstName>
+										<foaf:family_name>Brooks</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Hager%20J%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Jörg  Hager</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Jörg</foaf:firstName>
+										<foaf:family_name>Hager</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18053270"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</rdf:rest>
+			</rdf:List>
+		</rdf:rest>
+	</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</bibo:authorList>
+<dcterms:language>eng</dcterms:language>
+<dc:subject>Autistic Disorder</dc:subject>
+<dc:subject>Basic Helix-Loop-Helix Transcription Factors</dc:subject>
+<dc:subject>Case-Control Studies</dc:subject>
+<dc:subject>Child</dc:subject>
+<dc:subject>Chromosomes, Human, Pair 5</dc:subject>
+<dc:subject>DNA Mutational Analysis</dc:subject>
+<dc:subject>Female</dc:subject>
+<dc:subject>Gene Frequency</dc:subject>
+<dc:subject>Genes, Homeobox</dc:subject>
+<dc:subject>Genetic Markers</dc:subject>
+<dc:subject>Genetic Predisposition to Disease</dc:subject>
+<dc:subject>Haplotypes</dc:subject>
+<dc:subject>Histones</dc:subject>
+<dc:subject>Humans</dc:subject>
+<dc:subject>Linkage (Genetics)</dc:subject>
+<dc:subject>Male</dc:subject>
+<dc:subject>Multifactorial Inheritance</dc:subject>
+<dc:subject>Nerve Tissue Proteins</dc:subject>
+<dc:subject>Paired Box Transcription Factors</dc:subject>
+<dc:subject>Point Mutation</dc:subject>
+<dc:subject>Polymorphism, Single Nucleotide</dc:subject>
+<dc:subject>Sex Distribution</dc:subject>
+<dc:subject>Siblings</dc:subject>
+</bibo:Article>
+</foaf:made>
+<foaf:made>
+<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/16027742">
+	<bibo:pmid>16027742</bibo:pmid>
+	<owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:16027742"/>
+	<dc:title>Haplotypes in the gene encoding protein kinase c-beta (PRKCB1) on chromosome 16 are associated with autism.</dc:title>
+	<dc:date>2005-10</dc:date>
+	<dcterms:isPartOf>
+		<bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]9607835">
+			<bibo:issn>1359-4184</bibo:issn>
+			<dc:title>Molecular psychiatry</dc:title>
+			<bibo:shortTitle>Mol. Psychiatry</bibo:shortTitle>
+		</bibo:Journal>
+	</dcterms:isPartOf>
+	<bibo:volume>10</bibo:volume>
+	<bibo:issue>10</bibo:issue>
+	<bibo:pages>950-60</bibo:pages>
+	<bibo:authorList>
+		<rdf:List>
+			<rdf:first>
+				<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Philippi%20A%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					<foaf:name>A  Philippi</foaf:name>
+					<foaf:title>Dr</foaf:title>
+					<foaf:firstName>A</foaf:firstName>
+					<foaf:family_name>Philippi</foaf:family_name>
+					<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+				</foaf:Person>
+			</rdf:first>
+			<rdf:rest>
+				<rdf:List>
+					<rdf:first>
+						<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Roschmann%20E%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+							<foaf:name>E  Roschmann</foaf:name>
+							<foaf:title>Dr</foaf:title>
+							<foaf:firstName>E</foaf:firstName>
+							<foaf:family_name>Roschmann</foaf:family_name>
+							<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+						</foaf:Person>
+					</rdf:first>
+					<rdf:rest>
+						<rdf:List>
+							<rdf:first>
+								<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Tores%20F%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+									<foaf:name>F  Tores</foaf:name>
+									<foaf:title>Dr</foaf:title>
+									<foaf:firstName>F</foaf:firstName>
+									<foaf:family_name>Tores</foaf:family_name>
+									<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+								</foaf:Person>
+							</rdf:first>
+							<rdf:rest>
+								<rdf:List>
+									<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Lindenbaum%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>P  Lindenbaum</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>P</foaf:firstName>
+										<foaf:family_name>Lindenbaum</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Benajou%20A%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>A  Benajou</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>A</foaf:firstName>
+										<foaf:family_name>Benajou</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Germain-Leclerc%20L%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>L  Germain-Leclerc</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>L</foaf:firstName>
+										<foaf:family_name>Germain-Leclerc</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Marcaillou%20C%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>C  Marcaillou</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>C</foaf:firstName>
+										<foaf:family_name>Marcaillou</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Fontaine%20K%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>K  Fontaine</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>K</foaf:firstName>
+										<foaf:family_name>Fontaine</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Vanpeene%20M%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>M  Vanpeene</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>M</foaf:firstName>
+										<foaf:family_name>Vanpeene</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Roy%20S%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>S  Roy</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>S</foaf:firstName>
+										<foaf:family_name>Roy</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Maillard%20S%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>S  Maillard</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>S</foaf:firstName>
+										<foaf:family_name>Maillard</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Decaulne%20V%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>V  Decaulne</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>V</foaf:firstName>
+										<foaf:family_name>Decaulne</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Saraiva%20JP%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>J P  Saraiva</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>J P</foaf:firstName>
+										<foaf:family_name>Saraiva</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Brooks%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>P  Brooks</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>P</foaf:firstName>
+										<foaf:family_name>Brooks</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Rousseau%20F%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>F  Rousseau</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>F</foaf:firstName>
+										<foaf:family_name>Rousseau</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Hager%20J%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>J  Hager</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>J</foaf:firstName>
+										<foaf:family_name>Hager</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16027742"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</rdf:rest>
+			</rdf:List>
+		</rdf:rest>
+	</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</rdf:rest>
+</rdf:List>
+</bibo:authorList>
+<dcterms:language>eng</dcterms:language>
+<dc:subject>Autistic Disorder</dc:subject>
+<dc:subject>Chromosome Mapping</dc:subject>
+<dc:subject>Chromosomes, Human, Pair 16</dc:subject>
+<dc:subject>Family</dc:subject>
+<dc:subject>Humans</dc:subject>
+<dc:subject>Polymorphism, Single Nucleotide</dc:subject>
+<dc:subject>Protein Kinase C</dc:subject>
+</bibo:Article>
+</foaf:made>
+<foaf:made>
+<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/15047801">
+	<bibo:pmid>15047801</bibo:pmid>
+	<owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15047801"/>
+	<dc:title>RoXaN, a novel cellular protein containing TPR, LD, and zinc finger motifs, forms a ternary complex with eukaryotic initiation factor 4G and rotavirus NSP3.</dc:title>
+	<dc:date>2004-04</dc:date>
+	<dcterms:isPartOf>
+		<bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]0113724">
+			<bibo:issn>0022-538X</bibo:issn>
+			<dc:title>Journal of virology</dc:title>
+			<bibo:shortTitle>J. Virol.</bibo:shortTitle>
+		</bibo:Journal>
+	</dcterms:isPartOf>
+	<bibo:volume>78</bibo:volume>
+	<bibo:issue>8</bibo:issue>
+	<bibo:pages>3851-62</bibo:pages>
+	<bibo:authorList>
+		<rdf:List>
+			<rdf:first>
+				<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Vitour%20D%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					<foaf:name>Damien  Vitour</foaf:name>
+					<foaf:title>Dr</foaf:title>
+					<foaf:firstName>Damien</foaf:firstName>
+					<foaf:family_name>Vitour</foaf:family_name>
+					<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15047801"/>
+				</foaf:Person>
+			</rdf:first>
+			<rdf:rest>
+				<rdf:List>
+					<rdf:first>
+						<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Lindenbaum%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+							<foaf:name>Pierre  Lindenbaum</foaf:name>
+							<foaf:title>Dr</foaf:title>
+							<foaf:firstName>Pierre</foaf:firstName>
+							<foaf:family_name>Lindenbaum</foaf:family_name>
+							<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15047801"/>
+						</foaf:Person>
+					</rdf:first>
+					<rdf:rest>
+						<rdf:List>
+							<rdf:first>
+								<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Vende%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+									<foaf:name>Patrice  Vende</foaf:name>
+									<foaf:title>Dr</foaf:title>
+									<foaf:firstName>Patrice</foaf:firstName>
+									<foaf:family_name>Vende</foaf:family_name>
+									<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15047801"/>
+								</foaf:Person>
+							</rdf:first>
+							<rdf:rest>
+								<rdf:List>
+									<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Becker%20MM%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Michelle M  Becker</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Michelle M</foaf:firstName>
+										<foaf:family_name>Becker</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15047801"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest>
+									<rdf:List>
+										<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Poncet%20D%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>Didier  Poncet</foaf:name>
+										<foaf:title>Dr</foaf:title>
+										<foaf:firstName>Didier</foaf:firstName>
+										<foaf:family_name>Poncet</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15047801"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</rdf:rest>
+			</rdf:List>
+		</rdf:rest>
+	</rdf:List>
+</rdf:rest>
+</rdf:List>
+</bibo:authorList>
+<dcterms:language>eng</dcterms:language>
+<dc:subject>Amino Acid Motifs</dc:subject>
+<dc:subject>Amino Acid Sequence</dc:subject>
+<dc:subject>Animals</dc:subject>
+<dc:subject>Base Sequence</dc:subject>
+<dc:subject>COS Cells</dc:subject>
+<dc:subject>Cell Line</dc:subject>
+<dc:subject>DNA, Complementary</dc:subject>
+<dc:subject>Eukaryotic Initiation Factor-4G</dc:subject>
+<dc:subject>Evolution, Molecular</dc:subject>
+<dc:subject>Gene Expression</dc:subject>
+<dc:subject>Humans</dc:subject>
+<dc:subject>Macromolecular Substances</dc:subject>
+<dc:subject>Multiprotein Complexes</dc:subject>
+<dc:subject>Peptide Fragments</dc:subject>
+<dc:subject>Peptide Initiation Factors</dc:subject>
+<dc:subject>RNA, Messenger</dc:subject>
+<dc:subject>RNA-Binding Proteins</dc:subject>
+<dc:subject>Rotavirus</dc:subject>
+<dc:subject>Rotavirus Infections</dc:subject>
+<dc:subject>Two-Hybrid System Techniques</dc:subject>
+<dc:subject>Viral Nonstructural Proteins</dc:subject>
+<dc:subject>Viral Proteins</dc:subject>
+<dc:subject>Zinc Fingers</dc:subject>
+</bibo:Article>
+</foaf:made>
+<foaf:made>
+<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/9682060">
+	<bibo:pmid>9682060</bibo:pmid>
+	<owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:9682060"/>
+	<dc:title>CloneIt: finding cloning strategies, in-frame deletions and frameshifts.</dc:title>
+	<dc:date>1998-06</dc:date>
+	<dcterms:isPartOf>
+		<bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]9808944">
+			<bibo:issn>1367-4803</bibo:issn>
+			<dc:title>Bioinformatics (Oxford, England)</dc:title>
+			<bibo:shortTitle>Bioinformatics</bibo:shortTitle>
+		</bibo:Journal>
+	</dcterms:isPartOf>
+	<bibo:volume>14</bibo:volume>
+	<bibo:issue>5</bibo:issue>
+	<bibo:pages>465-6</bibo:pages>
+	<bibo:authorList>
+		<rdf:List>
+			<rdf:first>
+				<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Lindenbaum%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					<foaf:name>P  Lindenbaum</foaf:name>
+					<foaf:title>Dr</foaf:title>
+					<foaf:firstName>P</foaf:firstName>
+					<foaf:family_name>Lindenbaum</foaf:family_name>
+					<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9682060"/>
+				</foaf:Person>
+			</rdf:first>
+			<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		</rdf:List>
+	</bibo:authorList>
+	<dcterms:language>eng</dcterms:language>
+	<dc:subject>Algorithms</dc:subject>
+	<dc:subject>Cloning, Molecular</dc:subject>
+	<dc:subject>Computational Biology</dc:subject>
+	<dc:subject>DNA Restriction Enzymes</dc:subject>
+	<dc:subject>Databases, Factual</dc:subject>
+	<dc:subject>Frameshift Mutation</dc:subject>
+	<dc:subject>Genetic Vectors</dc:subject>
+	<dc:subject>Plasmids</dc:subject>
+	<dc:subject>Sequence Deletion</dc:subject>
+	<dc:subject>Software</dc:subject>
+</bibo:Article>
+</foaf:made>
+<foaf:made>
+<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/8985320">
+	<bibo:pmid>8985320</bibo:pmid>
+	<owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8985320"/>
+	<dc:title>In vivo and in vitro phosphorylation of rotavirus NSP5 correlates with its localization in viroplasms.</dc:title>
+	<dc:date>1997-01</dc:date>
+	<dcterms:isPartOf>
+		<bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]0113724">
+			<bibo:issn>0022-538X</bibo:issn>
+			<dc:title>Journal of virology</dc:title>
+			<bibo:shortTitle>J. Virol.</bibo:shortTitle>
+		</bibo:Journal>
+	</dcterms:isPartOf>
+	<bibo:volume>71</bibo:volume>
+	<bibo:issue>1</bibo:issue>
+	<bibo:pages>34-41</bibo:pages>
+	<bibo:authorList>
+		<rdf:List>
+			<rdf:first>
+				<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Poncet%20D%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					<foaf:name>D  Poncet</foaf:name>
+					<foaf:title>Dr</foaf:title>
+					<foaf:firstName>D</foaf:firstName>
+					<foaf:family_name>Poncet</foaf:family_name>
+					<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8985320"/>
+				</foaf:Person>
+			</rdf:first>
+			<rdf:rest>
+				<rdf:List>
+					<rdf:first>
+						<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Lindenbaum%20P%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+							<foaf:name>P  Lindenbaum</foaf:name>
+							<foaf:title>Dr</foaf:title>
+							<foaf:firstName>P</foaf:firstName>
+							<foaf:family_name>Lindenbaum</foaf:family_name>
+							<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8985320"/>
+						</foaf:Person>
+					</rdf:first>
+					<rdf:rest>
+						<rdf:List>
+							<rdf:first>
+								<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22L'Haridon%20R%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+									<foaf:name>R  L'Haridon</foaf:name>
+									<foaf:title>Dr</foaf:title>
+									<foaf:firstName>R</foaf:firstName>
+									<foaf:family_name>L'Haridon</foaf:family_name>
+									<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8985320"/>
+								</foaf:Person>
+							</rdf:first>
+							<rdf:rest>
+								<rdf:List>
+									<rdf:first>
+										<foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Cohen%20J%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+										<foaf:name>J  Cohen</foaf:name>					<foaf:title>Dr</foaf:title>
+										<foaf:firstName>J</foaf:firstName>
+										<foaf:family_name>Cohen</foaf:family_name>
+										<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8985320"/>
+									</foaf:Person>
+								</rdf:first>
+								<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+							</rdf:List>
+						</rdf:rest>
+					</rdf:List>
+				</rdf:rest>
+			</rdf:List>
+		</rdf:rest>
+	</rdf:List>
+</bibo:authorList>
+	<dcterms:language>eng</dcterms:language>
+	<dc:subject>Phosphorylation</dc:subject>
+	<dc:subject>Protein Kinases</dc:subject>
+	<dc:subject>RNA-Binding Proteins</dc:subject>
+	<dc:subject>Rotavirus</dc:subject>
+	<dc:subject>Viral Nonstructural Proteins</dc:subject>
+	<dc:subject>Viral Proteins</dc:subject>
+  </bibo:Article>
+	</foaf:made>
 	
 </foaf:Person>
 
