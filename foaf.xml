@@ -125,6 +125,9 @@
 		<foaf:OnlineAccount rdf:about="http://friendfeed.com/yokofakun">
 			<foaf:accountName>yokofakun</foaf:accountName>
 			<foaf:accountServiceHomepage rdf:resource="http://friendfeed.com"/>
+			<foaf:accountProfilePage rdf:resource="http://friendfeed.com/yokofakun"/>
+			<foaf:name>FriendFeed</foaf:name>
+			<foaf:thumbnail rdf:resource="http://friendfeed.com/static/images/favicon.png"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -132,12 +135,18 @@
 		<foaf:OnlineAccount rdf:about="http://twitter.com/yokofakun">
 			<foaf:accountName>yokofakun</foaf:accountName>
 			<foaf:accountServiceHomepage rdf:resource="http://twitter.com"/>
+			<foaf:accountProfilePage rdf:resource="http://twitter.com/yokofakun"/>
+			<foaf:name>Twitter</foaf:name>
+			<foaf:thumbnail rdf:resource="http://a1.twimg.com/a/1283191627/images/favicon.ico"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
 	<foaf:holdsAccount>
 		<foaf:OnlineAccount rdf:about="http://www.linkedin.com/ppl/webprofile?id=1510707">
 			<foaf:accountServiceHomepage rdf:resource="http://www.linkedin.com"/>
+			<foaf:accountProfilePage rdf:resource="http://www.linkedin.com/ppl/webprofile?id=1510707"/>
+			<foaf:name>LinkedIn</foaf:name>
+			<foaf:thumbnail rdf:resource="http://developer.linkedin.com/favicon.png"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -145,6 +154,8 @@
 		<foaf:OnlineAccount rdf:about="http://www.delicious.com/lindenb">
 			<foaf:accountName>lindenb</foaf:accountName>
 			<foaf:accountServiceHomepage rdf:resource="http://www.delicious.com"/>
+			<foaf:accountProfilePage rdf:resource="http://www.delicious.com/lindenb"/>
+			<foaf:name>del.icio.us</foaf:name>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -152,6 +163,8 @@
 		<foaf:OnlineAccount rdf:about="http://biostar.stackexchange.com/users/30">
 			<foaf:accountName>30</foaf:accountName>
 			<foaf:accountServiceHomepage rdf:resource="http://biostar.stackexchange.com/"/>
+			<foaf:accountProfilePage rdf:resource="http://biostar.stackexchange.com/users/30"/>
+			<foaf:name>Biostar</foaf:name>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -159,6 +172,9 @@
 		<foaf:OnlineAccount rdf:about="http://stackoverflow.com/users/58082">
 			<foaf:accountName>58082</foaf:accountName>
 			<foaf:accountServiceHomepage rdf:resource="http://stackoverflow.com/"/>
+			<foaf:accountProfilePage rdf:resource="http://stackoverflow.com/users/58082"/>
+			<foaf:name>StackOverflow</foaf:name>
+			<foaf:thumbnail rdf:resource="http://sstatic.net/stackoverflow/img/favicon.ico"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -166,6 +182,8 @@
 		<foaf:OnlineAccount rdf:about="http://en.wikipedia.org/wiki/User:Plindenbaum">
 			<foaf:accountName>User:Plindenbaum</foaf:accountName>
 			<foaf:accountServiceHomepage rdf:resource="http://en.wikipedia.org"/>
+			<foaf:accountProfilePage rdf:resource="http://en.wikipedia.org/wiki/User:Plindenbaum"/>
+			<foaf:name>Wikipedia(en)</foaf:name>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -174,6 +192,7 @@
 			<foaf:accountServiceHomepage rdf:resource="http://www.slideshare.net"/>
 			<foaf:accountName>lindenb</foaf:accountName>
 			<foaf:accountProfilePage rdf:resource="http://www.slideshare.net/lindenb"/>
+			<foaf:name>Slideshare</foaf:name>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 
@@ -182,6 +201,34 @@
 			<foaf:accountServiceHomepage rdf:resource="http://network.nature.com"/>
 			<foaf:accountName>lindenb</foaf:accountName>
 			<foaf:accountProfilePage rdf:resource="http://network.nature.com/profile/lindenb"/>
+			<foaf:name>Nature Network</foaf:name>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://www.connotea.org/user/lindenb">
+			<foaf:accountServiceHomepage rdf:resource="http://www.connotea.org"/>
+			<foaf:accountName>lindenb</foaf:accountName>
+			<foaf:accountProfilePage rdf:resource="http://www.connotea.org/user/lindenb"/>
+			<foaf:name>Connotea</foaf:name>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://www.citeulike.org/user/lindenb">
+			<foaf:accountServiceHomepage rdf:resource="http://www.citeulike.org/"/>
+			<foaf:accountName>lindenb</foaf:accountName>
+			<foaf:accountProfilePage rdf:resource="http://www.citeulike.org/user/lindenb"/>
+			<foaf:name>CiteULike</foaf:name>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://openwetware.org/wiki/User:Lindenb">
+			<foaf:accountServiceHomepage rdf:resource="http://openwetware.org"/>
+			<foaf:accountName>User:Lindenb</foaf:accountName>
+			<foaf:accountProfilePage rdf:resource="http://openwetware.org/wiki/User:Lindenb"/>
+			<foaf:name>OpenWetWare</foaf:name>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	

@@ -43,6 +43,14 @@ body	{
 	background-image: -moz-linear-gradient(top, rgb(40,40,40),rgb(230,230,230));
 	}
 
+h1	{
+	text-align:center;
+	}
+	
+h3	{
+	clear: left;
+	}
+	
 #page	{
 	background-color:white;
 	margin:20px;
@@ -50,7 +58,13 @@ body	{
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 	}
-
+.mainpict {
+	float:left;
+	padding:10px;
+	}
+img	{
+	border:0px;
+	}
 </style>
 <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
 <script type="text/javascript">
@@ -115,18 +129,13 @@ window.addEventListener("resize",windowResized,true);
 </head>
 <body>
 <div id="page">
-<h1>
-<xsl:value-of select="$me/foaf:name"/>
-<xsl:text>'s FOAF Profile.</xsl:text>
-</h1>
-
-<xsl:apply-templates />
+<xsl:apply-templates select="$me"/>
 </div>
 </body>
 </html>
 </xsl:template>
 
-<xsl:template match="foaf:Image">
+<xsl:template match="foaf:Image" mode="main">
  <xsl:element name="img">
  	<xsl:attribute name="src">
  		<xsl:value-of select="@rdf:about"/>
@@ -134,10 +143,18 @@ window.addEventListener("resize",windowResized,true);
  	<xsl:attribute name="title">
  		<xsl:value-of select="dc:title"/>
  	</xsl:attribute>
+ 	<xsl:attribute name="class">
+ 		<xsl:text>mainpict</xsl:text>
+ 	</xsl:attribute>
  </xsl:element>
 </xsl:template>
 
 <xsl:template match="foaf:Person">
+<div><h1>
+<xsl:apply-templates select="/rdf:RDF/foaf:Image[@rdf:about = $me/foaf:img/@rdf:resource ]" mode="main"/>
+<xsl:value-of select="$me/foaf:name"/>
+<xsl:text>'s FOAF Profile.</xsl:text>
+</h1></div>
 <h3>TimeLine</h3>
 <div id="my-timeline" style="height: 200px; border: 1px solid #aaa"></div>
 <h3>Accounts</h3>
@@ -203,35 +220,35 @@ window.addEventListener("resize",windowResized,true);
 </dl>
 </xsl:template>
 
+
+
 <xsl:template match="foaf:OnlineAccount">
 <dt>
-<xsl:apply-templates select="foaf:accountServiceHomepage"/>
+<xsl:if test="foaf:thumbnail/@rdf:resource">
+ <xsl:element name="img">
+ 	<xsl:attribute name="src">
+ 		<xsl:value-of select="foaf:thumbnail/@rdf:resource"/>
+ 	</xsl:attribute>
+ 	<xsl:attribute name="title">
+ 		<xsl:value-of select="foaf:name"/>
+ 	</xsl:attribute>
+ 	<xsl:attribute name="alt">
+ 		<xsl:value-of select="foaf:name"/>
+ 	</xsl:attribute>
+ </xsl:element>
+</xsl:if>
+
 <xsl:element name="a">
-<xsl:attribute name="href"><xsl:value-of select="@rdf:about"/></xsl:attribute>
-<xsl:apply-templates select="foaf:accountName"/>
+<xsl:attribute name="target">
+ 		<xsl:text>_blank</xsl:text>
+ </xsl:attribute>
+ <xsl:attribute name="title">
+ 		<xsl:text>foaf:name</xsl:text>
+ </xsl:attribute>
+<xsl:attribute name="href"><xsl:value-of select="foaf:accountProfilePage/@rdf:resource"/></xsl:attribute>
+<xsl:value-of select="foaf:name"/>
 </xsl:element>
 </dt>
-</xsl:template>
-
-
-<xsl:template match="foaf:accountServiceHomepage">
-<xsl:element name="a">
-<xsl:attribute name="href"><xsl:value-of select="@rdf:resource"/></xsl:attribute>
-<xsl:choose>
-<xsl:when test="@rdf:resource='http://twitter.com'">
-	<img src="http://a1.twimg.com/a/1283191627/images/favicon.ico" alt="Twitter"/>
-</xsl:when>
-<xsl:when test="@rdf:resource='http://friendfeed.com'">
-	<img src="http://friendfeed.com/static/images/favicon.png" alt="Friendfeed"/>
-</xsl:when>
-<xsl:when test="@rdf:resource='http://www.linkedin.com'">
-	<img src="http://developer.linkedin.com/favicon.png" alt="LinkedIn"/>
-</xsl:when>
-<xsl:otherwise>
-	<xsl:apply-templates select="@rdf:resource"/>
-</xsl:otherwise>
-</xsl:choose>
-</xsl:element>
 </xsl:template>
 
 <xsl:template match="doac:Experience" mode="json">
