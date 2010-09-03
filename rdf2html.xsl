@@ -317,8 +317,24 @@ View Larger Map
 
 <xsl:template match="bibo:Article">
 <dt>
+<xsl:element name="a">
+<xsl:attribute name="target">_blank</xsl:attribute>
+<xsl:attribute name="title">pubmed</xsl:attribute>
+<xsl:attribute name="href"><xsl:value-of select="@rdf:about"/></xsl:attribute>
 <xsl:value-of select="dc:title"/>
+</xsl:element>
 </dt>
+<dd>
+<xsl:apply-templates select="dcterms:isPartOf/bibo:Journal"/>
+<xsl:text>. </xsl:text>
+<xsl:apply-templates select="dc:date"/>
+<xsl:text>. </xsl:text>
+<xsl:apply-templates select="bibo:volume"/>
+<xsl:apply-templates select="bibo:issue"/>
+<xsl:apply-templates select="bibo:pages"/>
+<xsl:text>. </xsl:text>
+<xsl:apply-templates select="bibo:authorList"/>
+</dd>
 </xsl:template>
 
 <xsl:template match="bibo:Article" mode="json">
@@ -329,6 +345,59 @@ View Larger Map
         image: 'http://www.ncbi.nlm.nih.gov/coreweb/images/icons/PubMed.gif',
         link:'<xsl:value-of select="@rdf:about"/>'
         }
+</xsl:template>
+
+<xsl:template match="bibo:volume">
+<xsl:text> vol.</xsl:text><b><xsl:value-of select="."/></b>
+</xsl:template>
+<xsl:template match="bibo:issue">
+<xsl:text> (</xsl:text><i><xsl:value-of select="."/></i><xsl:text>)</xsl:text>
+</xsl:template>
+<xsl:template match="bibo:pages">
+<xsl:text>pp.</xsl:text><xsl:value-of select="."/>
+</xsl:template>
+
+<xsl:template match="bibo:authorList">
+<xsl:apply-templates select="rdf:List" mode="authors"/>
+</xsl:template>
+
+<xsl:template match="rdf:List" mode="authors">
+<xsl:apply-templates select="rdf:first|rdf:rest" mode="authors"/>
+</xsl:template>
+
+<xsl:template match="rdf:first" mode="authors">
+<xsl:apply-templates select="foaf:Person" mode="authors"/>
+</xsl:template>
+
+<xsl:template match="rdf:rest" mode="authors">
+<xsl:choose>
+<xsl:when test="@rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'">
+	<xsl:text>.</xsl:text>
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>, </xsl:text>
+<xsl:apply-templates select="rdf:List" mode="authors"/>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:template>
+
+<xsl:template match="foaf:Person" mode="authors">
+<xsl:value-of select="foaf:name"/>
+</xsl:template>
+
+<xsl:template match="bibo:Journal">
+<xsl:element name="a">
+	<xsl:attribute name="href">
+		<xsl:value-of select="@rdf:about"/>
+	</xsl:attribute>
+	<xsl:attribute name="title">
+		<xsl:text>Nlm</xsl:text>
+	</xsl:attribute>
+	<xsl:attribute name="target">
+		<xsl:text>_blank</xsl:text>
+	</xsl:attribute>
+	<xsl:value-of select="dc:title"/>
+</xsl:element>
 </xsl:template>
 
 
