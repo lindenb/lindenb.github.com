@@ -45,10 +45,12 @@ body	{
 
 h1	{
 	text-align:center;
+	text-shadow: 3px 3px 4px gray;
 	}
 	
 h3	{
 	clear: left;
+	text-shadow: 3px 3px 4px gray;
 	}
 	
 #page	{
@@ -62,9 +64,21 @@ h3	{
 	float:left;
 	padding:10px;
 	}
+
 img	{
 	border:0px;
 	}
+
+dt	{
+	margin-left:10pt;
+	font-weight:bold;
+	}
+
+dd	{
+	margin-left:30pt;
+	color:black;
+	}
+
 </style>
 <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
 <script type="text/javascript">
@@ -175,7 +189,12 @@ window.addEventListener("resize",windowResized,true);
 <div style="-moz-column-count: 3;
             -moz-column-rule: 1px solid #bbb;
             -moz-column-gap: 2em;">
-<xsl:apply-templates select="foaf:knows/foaf:Person" mode="knows"/>
+<xsl:for-each select="foaf:knows/foaf:Person">
+ <xsl:sort select="foaf:name"/>
+<div>
+<xsl:apply-templates select="." mode="knows"/>
+</div>
+</xsl:for-each>
 </div>
 <xsl:apply-templates select="foaf:based_near"/>
 </xsl:template>
@@ -188,9 +207,18 @@ window.addEventListener("resize",windowResized,true);
 
 <xsl:template match="doac:Experience">
 <dt>
+<xsl:text>(</xsl:text>
 <xsl:apply-templates select="doac:date-starts"/>
-<xsl:apply-templates select="doac:date-ends"/>
+<xsl:if test="doac:date-ends">
+	<xsl:text> - </xsl:text>
+	<xsl:apply-templates select="doac:date-ends"/>
+</xsl:if>
+<xsl:text>)</xsl:text>
 <xsl:apply-templates select="doac:title"/>
+<xsl:if test="doac:location">
+	<xsl:text>. </xsl:text>
+	<xsl:apply-templates select="doac:location"/>
+</xsl:if>
 </dt>
 <dd>
 <xsl:apply-templates select="doac:activity"/>
@@ -205,9 +233,16 @@ window.addEventListener("resize",windowResized,true);
 
 <xsl:template match="doac:Education">
 <dt>
+<xsl:text>(</xsl:text>
 <xsl:apply-templates select="doac:date-starts"/>
-<xsl:apply-templates select="doac:date-ends"/>
-<xsl:apply-templates select="doac:subject"/>
+<xsl:if test="doac:date-ends">
+	<xsl:text> - </xsl:text>
+	<xsl:apply-templates select="doac:date-ends"/>
+</xsl:if>
+<xsl:text>). </xsl:text>
+<xsl:apply-templates select="doac:title"/>
+<xsl:text> at </xsl:text>
+<xsl:apply-templates select="foaf:organization"/>
 </dt>
 <dd>
 <xsl:apply-templates select="doac:activity"/>
@@ -283,7 +318,42 @@ window.addEventListener("resize",windowResized,true);
 </xsl:template>
 
 <xsl:template match="foaf:Person" mode="knows">
+	<xsl:if test="foaf:depiction/@rdf:resource">
+		<xsl:element name="img">
+			<xsl:attribute name="src">
+				<xsl:value-of select="foaf:depiction/@rdf:resource"/>
+			</xsl:attribute>
+			<xsl:attribute name="title">
+				<xsl:value-of select="foaf:name"/>
+			</xsl:attribute>
+			<xsl:attribute name="alt">
+				<xsl:value-of select="foaf:name"/>
+			</xsl:attribute>
+			<xsl:attribute name="width">
+				<xsl:text>32px</xsl:text>
+			</xsl:attribute>
+		</xsl:element>
+	</xsl:if>
+	
+	<xsl:element name="a">
+		<xsl:attribute name="href">
+			<xsl:choose>
+				<xsl:when test="@rdf:about">
+					<xsl:value-of select="@rdf:about"/>
+				</xsl:when>
+				<xsl:when test="foaf:homepage">
+					<xsl:value-of select="foaf:homepage"/>
+				</xsl:when>
+				<xsl:when test="foaf:weblog">
+					<xsl:value-of select="foaf:weblog"/>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:attribute>
 	<xsl:value-of select="foaf:name"/>
+	</xsl:element>
+	
+	
+	
 </xsl:template>
 
 <xsl:template match="foaf:based_near">
@@ -382,7 +452,14 @@ View Larger Map
 </xsl:template>
 
 <xsl:template match="foaf:Person" mode="authors">
-<xsl:value-of select="foaf:name"/>
+<xsl:choose>
+	<xsl:when test="@rdf:about = $primaryTopic">
+		<b><xsl:value-of select="foaf:name"/></b>
+	</xsl:when>
+	<xsl:otherwise>
+		<xsl:value-of select="foaf:name"/>
+	</xsl:otherwise>
+</xsl:choose>
 </xsl:template>
 
 <xsl:template match="bibo:Journal">
