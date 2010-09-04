@@ -17,6 +17,7 @@
 	xmlns:bibo="http://purl.org/ontology/bibo/"
 	xmlns:dcterms="http://purl.org/dc/terms/"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:bio="http://purl.org/vocab/bio/0.1/"
 	>
 
 <foaf:PersonalProfileDocument rdf:about="">
@@ -27,6 +28,7 @@
 	
 <foaf:Person rdf:ID="PierreLindenbaum">
 	<foaf:name>Pierre Lindenbaum</foaf:name>
+	<bio:olb>Bioinformatician at INSERM-U915, Nantes, France</bio:olb>
 	<foaf:title>Dr</foaf:title>
 	<foaf:givenname>Pierre</foaf:givenname>
 	<foaf:family_name>Lindenbaum</foaf:family_name>
@@ -203,6 +205,7 @@
 			<foaf:accountServiceHomepage rdf:resource="http://network.nature.com"/>
 			<foaf:accountName>lindenb</foaf:accountName>
 			<foaf:accountProfilePage rdf:resource="http://network.nature.com/profile/lindenb"/>
+			<foaf:thumbnail rdf:resource="http://network.nature.com/favicon.ico"/>
 			<foaf:name>Nature Network</foaf:name>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
@@ -237,6 +240,7 @@
 	
 	<foaf:knows>
 		<foaf:Person rdf:about="http://egonw.github.com/">
+			<bio:olb>Post-doc at Uppsala University</bio:olb>
 			<foaf:weblog rdf:resource="http://chem-bla-ics.blogspot.com/"/>
 			<foaf:firstName>Egon</foaf:firstName>
 			<foaf:title>Dr</foaf:title>
@@ -252,6 +256,7 @@
 		<foaf:Person rdf:about="http://github.com/joergkurtwegner/snippets/raw/master/xml/foaf.xml">
 			<foaf:title>Dr</foaf:title>
 			<foaf:name>Joerg Kurt Wegner</foaf:name>
+			<bio:olb>Scientist at Tibotec</bio:olb>
 			<foaf:depiction rdf:resource="http://media01.linkedin.com/mpr/mpr/shrink_80_80/p/3/000/022/12d/0341fc0.jpg"/>
 		</foaf:Person>
 	</foaf:knows>
@@ -260,8 +265,9 @@
 	<foaf:knows>
 		<foaf:Person rdf:aviyt="http://mndoci.com/blog">
 			<foaf:mbox_sha1sum>bc1da48245bc6b3aa0d270a060c9f6d57d18b272</foaf:mbox_sha1sum>
+			<bio:olb>Business developer and technologist; open data geek</bio:olb>
 			<foaf:name>Deepak Singh</foaf:name>
-			<foaf:depiction rdf:resource="http://media.linkedin.com/mpr/mpr/shrink_80_80/p/2/000/001/150/35dfccd.jpg"/>
+			<foaf:depiction rdf:resource="http://media03.linkedin.com/mpr/mpr/shrink_80_80/p/1/000/042/3f5/369f807.jpg"/>
 			<foaf:firstName>Deepak</foaf:firstName>
 			<foaf:homepage rdf:resource="http://mndoci.com/blog/"/>
 			<foaf:family_name>Singh</foaf:family_name>
@@ -271,7 +277,8 @@
 
 	<foaf:knows>
 		<foaf:Person rdf:about="http://duncan.hull.name/">
-			<foaf:depiction rdf:resource="http://media.linkedin.com/mpr/mpr/shrink_80_80/p/3/000/001/0f9/36e713e.jpg"/>
+			<bio:olb>Software engineer at European Molecular Biology Laboratory - EBI</bio:olb>
+			<foaf:depiction rdf:resource="http://media02.linkedin.com/mpr/mpr/shrink_80_80/p/3/000/025/024/2e3fc99.jpg"/>
 			<foaf:weblog rdf:resource="http://duncan.hull.name/"/>
 			<foaf:homepage rdf:resource="http://duncan.hull.name/"/>
 			<foaf:firstName>Duncan</foaf:firstName>
@@ -284,13 +291,13 @@
 	
 	<foaf:knows>
 		<foaf:Person rdf:about="http://my.biotechlife.net/">
+			<bio:olb>Ph.D. student at Queen's University</bio:olb>
 			<foaf:holdsAccount rdf:resource="http://twitter.com/rvidal"/>
 			<foaf:family_name>Vidal</foaf:family_name>
 			<foaf:name>Ricardo Vidal</foaf:name>
-			<dc:date>2009-01-20</dc:date>
 			<foaf:homepage rdf:resource="http://my.biotechlife.net/"/>
 			<foaf:weblog rdf:resource="http://my.biotechlife.net/"/>
-			<foaf:depiction rdf:resource="http://media.linkedin.com/mpr/mpr/shrink_80_80/p/3/000/001/2d8/1f15853.jpg"/>
+			<foaf:depiction rdf:resource="http://media01.linkedin.com/mpr/mpr/shrink_80_80/p/3/000/001/2d8/1f15853.jpg"/>
 			<foaf:firstName>Ricardo</foaf:firstName>
 			<foaf:title>Dr</foaf:title>
 		</foaf:Person>
@@ -301,6 +308,7 @@
 			<foaf:title>Dr</foaf:title>
 			<foaf:name>Paulo Nuin</foaf:name>
 			<foaf:firstName>Paulo</foaf:firstName>
+			<bio:olb>Experienced Bioinformatician, Biologist, Software Developer</bio:olb>
 			<foaf:homepage rdf:resource="http://www.genedrift.org/"/>
 			<foaf:family_name>Nuin</foaf:family_name>
 			<foaf:depiction rdf:resource="http://media03.linkedin.com/mpr/mpr/shrink_80_80/p/1/000/066/13f/0f23dea.jpg"/>
@@ -310,7 +318,7 @@
 	
 	<foaf:knows>
 		<foaf:Person rdf:about="http://usefulchem.blogspot.com">
-			<foaf:knows rdf:resource="http://mndoci.com/blog/"/>
+			<bio:olb>E-Learning Coordinator, College of Arts and Sciences, Drexel University</bio:olb>
 			<foaf:name>Jean-Claude Bradley</foaf:name>
 			<foaf:firstName>Jean-Claude</foaf:firstName>
 			<foaf:givenname>Jean-Claude</foaf:givenname>
@@ -318,9 +326,7 @@
 			<foaf:weblog rdf:resource="http://usefulchem.blogspot.com/"/>
 			<foaf:family_name>Bradley</foaf:family_name>
 			<foaf:title>Dr</foaf:title>
-			<dc:date>2009-01-15</dc:date>
-			<foaf:depiction rdf:resource="http://i.friendfeed.com/p-6f72e34c099c11dd90ed003048343a40-large-1"/>
-			<foaf:knows rdf:resource="http://blog.openwetware.org/scienceintheopen/"/>
+			<foaf:depiction rdf:resource="http://media02.linkedin.com/mpr/mpr/shrink_80_80/p/3/000/004/210/2b6b748.jpg"/>
 			<foaf:holdsAccount rdf:resource="http://friendfeed.com/jcbradley"/>
 			<event:isAgentIn rdf:resource="http://network.nature.com/group/scifoo"/>
 			<foaf:holdsAccount rdf:resource="http://www.linkedin.com/in/jcbradley"/>
@@ -329,7 +335,7 @@
 	
 	<foaf:knows>
 		<foaf:Person rdf:about="http://pbeltrao.blogspot.com/">
-			<dc:date>2008-07-20</dc:date>
+			<bio:olb>postdoc at UCSF</bio:olb>
 			<foaf:title>Dr</foaf:title>
 			<foaf:depiction rdf:resource="http://photos-g.ak.facebook.com/photos-ak-sf2p/v77/37/43/690281922/n690281922_171102_9765.jpg"/>
 			<foaf:homepage rdf:resource="http://pbeltrao.blogspot.com/"/>
@@ -345,6 +351,7 @@
 	<foaf:knows>
 		<foaf:Person rdf:about="http://freelancingscience.com/">
 			<foaf:family_name>Szczesny</foaf:family_name>
+			<bio:olb>Director at  Systems Institute</bio:olb>
 			<foaf:mbox_sha1sum>e24352743b6e63b7d0a78b8abf72e8fb53195e31</foaf:mbox_sha1sum>
 			<foaf:homepage rdf:resource="http://freelancingscience.com/"/>
 			<foaf:holdsAccount rdf:resource="http://twitter.com/freesci"/>
@@ -360,7 +367,7 @@
 		<foaf:Person rdf:about="http://blog.openwetware.org/scienceintheopen/">
 			<foaf:depiction rdf:resource="http://media01.linkedin.com/mpr/mpr/shrink_80_80/p/2/000/01c/277/18919d2.jpg"/>
 			<foaf:holdsAccount rdf:resource="http://delicious.com/cameronneylon"/>
-			<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15025533"/>
+			<bio:olb>Senior Scientist at Science and Technology Facilities Council</bio:olb>
 			<foaf:family_name>Neylon</foaf:family_name>
 			<foaf:weblog rdf:resource="http://blog.openwetware.org/scienceintheopen/"/>
 			<foaf:holdsAccount rdf:resource="http://openwetware.org/wiki/User:Cameron_Neylon"/>
@@ -374,6 +381,7 @@
 	
 	<foaf:knows>
 		<foaf:Person rdf:about="http://nsaunders.wordpress.com/">
+			<bio:olb>Statistical Bioinformatician, CSIRO Mathematics, Information and Statistics</bio:olb>
 			<foaf:knows rdf:resource="http://code.google.com/p/lindenb/source/browse/trunk/proj/scifoaf/test/biogang.rdf"/>
 			<foaf:family_name>Saunders</foaf:family_name>
 			<foaf:mbox_sha1sum>ced409084ff44d2d908b609d7b7323d15afbb3f1</foaf:mbox_sha1sum>
@@ -388,18 +396,34 @@
 	</foaf:knows>
 	
 	<foaf:knows>
-		<foaf:Person rdf:about="http://pimm.wordpress.com/">
+		<foaf:Person rdf:about="http://biotechup.com/">
+			<bio:olb>Bioinformatician at European Bioinformatics Institute</bio:olb>
 			<foaf:firstName>Attila</foaf:firstName>
 			<foaf:title>Dr</foaf:title>
 			<foaf:weblog rdf:resource="http://pimm.wordpress.com/"/>
+			<foaf:weblog rdf:resource="http://biotechup.com/"/>
 			<foaf:gender>M</foaf:gender>
 			<foaf:family_name>Csordas</foaf:family_name>
 			<foaf:depiction rdf:resource="http://pimm.files.wordpress.com/2006/12/photo-13-copy.thumbnail.jpg"/>
 			<foaf:name>Attila Csordas</foaf:name>
-			<foaf:homepage rdf:resource="http://pimm.wordpress.com/"/>
+			<foaf:homepage rdf:resource="http://biotechup.com/"/>
 			<foaf:mbox_sha1sum>cc7a4bbd06ccdbceb5af7d333671c9543ba7e6b7</foaf:mbox_sha1sum>
 		</foaf:Person>
 	</foaf:knows>
+	
+	<foaf:knows>
+		<foaf:Person rdf:about="http://saaientist.blogspot.com/">
+			<bio:olb>Bioinformatician at European Bioinformatics Institute</bio:olb>
+			<foaf:firstName>Jan</foaf:firstName>
+			<foaf:title>Dr</foaf:title>
+			<foaf:weblog rdf:resource="http://saaientist.blogspot.com/"/>
+			<foaf:gender>M</foaf:gender>
+			<foaf:family_name>Aerts</foaf:family_name>
+			<foaf:depiction rdf:resource="http://media01.linkedin.com/mpr/mpr/shrink_80_80/p/1/000/000/239/2e061b0.jpg"/>
+			<foaf:name>Jan Aerts</foaf:name>
+		</foaf:Person>
+	</foaf:knows>
+	
 	
 	<foaf:made>
 		<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/19755503">
@@ -1407,6 +1431,31 @@
 	<dc:subject>Viral Proteins</dc:subject>
   </bibo:Article>
 	</foaf:made>
+
+<bio:event>
+	<bio:Event rdf:about="http://en.wikipedia.org/wiki/Science_Foo_Camp">
+		<bio:date>2007-08-02</bio:date>
+		<dc:title>SciFoo 2007</dc:title>
+		<bio:place>GooglePlex</bio:place>
+	</bio:Event>
+</bio:event>
+
+<bio:event>
+	<bio:Event rdf:about="http://hackathon2.dbcls.jp">
+		<bio:date>2009-03-15</bio:date>
+		<dc:title>Biohackathon 2009</dc:title>
+		<bio:place>Database Center for Life Science (Japan)</bio:place>
+	</bio:Event>
+</bio:event>
+
+<bio:event>
+	<bio:Event rdf:about="http://hackathon3.dbcls.jp/">
+		<bio:date>2010-03-08</bio:date>
+		<dc:title>Biohackathon 2010</dc:title>
+		<bio:place>Database Center for Life Science (Japan)</bio:place>
+	</bio:Event>
+</bio:event>
+
 	
 </foaf:Person>
 

@@ -15,6 +15,7 @@
 	xmlns:bibo="http://purl.org/ontology/bibo/"
 	xmlns:dcterms="http://purl.org/dc/terms/"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:bio="http://purl.org/vocab/bio/0.1/"
 	version='1.0'>
 <!--
 
@@ -47,7 +48,12 @@ h1	{
 	text-align:center;
 	text-shadow: 3px 3px 4px gray;
 	}
-	
+
+h2	{
+	text-align:center;
+	text-shadow: 1px 1px 2px gray;
+	}
+
 h3	{
 	clear: left;
 	text-shadow: 3px 3px 4px gray;
@@ -96,6 +102,10 @@ events : [
 	<xsl:apply-templates select="." mode="json"/>
         </xsl:for-each>
         <xsl:for-each select="//bibo:Article">
+	<xsl:text>,</xsl:text>
+	<xsl:apply-templates select="." mode="json"/>
+        </xsl:for-each>
+        <xsl:for-each select="//bio:event/bio:Event">
 	<xsl:text>,</xsl:text>
 	<xsl:apply-templates select="." mode="json"/>
         </xsl:for-each>
@@ -168,7 +178,13 @@ window.addEventListener("resize",windowResized,true);
 <xsl:apply-templates select="/rdf:RDF/foaf:Image[@rdf:about = $me/foaf:img/@rdf:resource ]" mode="main"/>
 <xsl:value-of select="$me/foaf:name"/>
 <xsl:text>'s FOAF Profile.</xsl:text>
-</h1></div>
+</h1>
+<xsl:if test="bio:olb">
+	<h2>
+	<xsl:apply-templates select="bio:olb"/>
+	</h2>
+</xsl:if>
+</div>
 <h3>TimeLine</h3>
 <div id="my-timeline" style="height: 200px; border: 1px solid #aaa"></div>
 <h3>Accounts</h3>
@@ -191,11 +207,15 @@ window.addEventListener("resize",windowResized,true);
             -moz-column-gap: 2em;">
 <xsl:for-each select="foaf:knows/foaf:Person">
  <xsl:sort select="foaf:name"/>
-<div>
+<dl>
 <xsl:apply-templates select="." mode="knows"/>
-</div>
+</dl>
 </xsl:for-each>
 </div>
+<h3>Event</h3>
+<dl>
+<xsl:apply-templates select="bio:event/bio:Event"/>
+</dl>
 <xsl:apply-templates select="foaf:based_near"/>
 </xsl:template>
 
@@ -318,6 +338,7 @@ window.addEventListener("resize",windowResized,true);
 </xsl:template>
 
 <xsl:template match="foaf:Person" mode="knows">
+<dt>
 	<xsl:if test="foaf:depiction/@rdf:resource">
 		<xsl:element name="img">
 			<xsl:attribute name="src">
@@ -351,8 +372,12 @@ window.addEventListener("resize",windowResized,true);
 		</xsl:attribute>
 	<xsl:value-of select="foaf:name"/>
 	</xsl:element>
-	
-	
+</dt>
+<xsl:if test="bio:olb">
+	<dd>
+		<xsl:apply-templates select="bio:olb"/>
+	</dd>
+</xsl:if>
 	
 </xsl:template>
 
@@ -475,6 +500,32 @@ View Larger Map
 	</xsl:attribute>
 	<xsl:value-of select="dc:title"/>
 </xsl:element>
+</xsl:template>
+
+<xsl:template match="bio:Event">
+<dt>
+<xsl:text>(</xsl:text>
+<xsl:value-of select="bio:date"/>
+<xsl:text>).</xsl:text>
+<xsl:element name="a">
+	<xsl:attribute name="target">
+		<xsl:text>_blank</xsl:text>
+	</xsl:attribute>
+	<xsl:attribute name="href">
+		<xsl:value-of select="@rdf:about"/>
+	</xsl:attribute>
+	<xsl:value-of select="dc:title"/>
+</xsl:element>
+</dt> 
+</xsl:template>
+
+<xsl:template match="bio:Event" mode="json">
+	{
+	start: '<xsl:value-of select="bio:date"/>',
+        title: '<xsl:apply-templates select="dc:title"/>',
+        description: '<xsl:apply-templates select="dc:title"/>',
+        link:'<xsl:value-of select="@rdf:about"/>'
+        }
 </xsl:template>
 
 
