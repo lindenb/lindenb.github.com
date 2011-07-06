@@ -148,7 +148,8 @@
 			<foaf:accountServiceHomepage rdf:resource="http://www.linkedin.com"/>
 			<foaf:accountProfilePage rdf:resource="http://www.linkedin.com/ppl/webprofile?id=1510707"/>
 			<foaf:name>LinkedIn</foaf:name>
-			<foaf:thumbnail rdf:resource="http://developer.linkedin.com/favicon.png"/>
+			<foaf:thumbnail rdf:resource="https://www.linkedin.com/scds/common/u/img/favicon_v3.ico"/>
+			
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -158,6 +159,7 @@
 			<foaf:accountServiceHomepage rdf:resource="http://www.delicious.com"/>
 			<foaf:accountProfilePage rdf:resource="http://www.delicious.com/lindenb"/>
 			<foaf:name>del.icio.us</foaf:name>
+			<foaf:thumbnail rdf:resource="http://www.delicious.com/favicon.ico"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -167,6 +169,7 @@
 			<foaf:accountServiceHomepage rdf:resource="http://biostar.stackexchange.com/"/>
 			<foaf:accountProfilePage rdf:resource="http://biostar.stackexchange.com/users/30"/>
 			<foaf:name>Biostar</foaf:name>
+			<foaf:thumbnail rdf:resource="http://biostar.stackexchange.com/theme/image/theme.favicon.0"/>
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
@@ -237,6 +240,16 @@
 		</foaf:OnlineAccount>
 	</foaf:holdsAccount>
 	
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount rdf:about="http://github.com/lindenb">
+			<foaf:accountServiceHomepage rdf:resource="http://github.com/"/>
+			<foaf:accountName>lindenb</foaf:accountName>
+			<foaf:accountProfilePage rdf:resource="http://github.com/lindenb"/>
+			<foaf:name>github</foaf:name>
+			<foaf:thumbnail rdf:resource="https://github.com/favicon.png"/>
+			
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
 	
 	<foaf:knows>
 		<foaf:Person rdf:about="http://egonw.github.com/">
@@ -424,6 +437,222 @@
 		</foaf:Person>
 	</foaf:knows>
 	
+	<foaf:made>
+		<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/21378989">
+		    <bibo:pmid>21378989</bibo:pmid>
+		    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:21378989"/>
+		    <dc:title>Truncating mutations in the last exon of NOTCH2 cause a rare skeletal disorder with osteoporosis.</dc:title>
+		    <dc:date>2011</dc:date>
+		    <bibo:abstract>Hajdu-Cheney syndrome is a rare autosomal dominant skeletal disorder with facial anomalies, osteoporosis and acro-osteolysis. We sequenced the exomes of six unrelated individuals with this syndrome and identified heterozygous nonsense and frameshift mutations in NOTCH2 in five of them. All mutations cluster to the last coding exon of the gene, suggesting that the mutant mRNA products escape nonsense-mediated decay and that the resulting truncated NOTCH2 proteins act in a gain-of-function manner.</bibo:abstract>
+		    <dcterms:isPartOf>
+		      <bibo:Journal rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=nlmcatalog&amp;doptcmdl=Expanded&amp;cmd=search&amp;Term=[NlmId]9216904">
+			<bibo:eissn>1546-1718</bibo:eissn>
+			<dc:title>Nature genetics</dc:title>
+			<bibo:shortTitle>Nat. Genet.</bibo:shortTitle>
+		      </bibo:Journal>
+		    </dcterms:isPartOf>
+		    <bibo:volume>43</bibo:volume>
+		    <bibo:issue>4</bibo:issue>
+		    <bibo:pages>306-8</bibo:pages>
+		    <bibo:authorList>
+		      <rdf:List>
+			<rdf:first>
+			  <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Isidor%20B%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+			    <foaf:name>Bertrand  Isidor</foaf:name>
+			    <foaf:title>Dr</foaf:title>
+			    <foaf:firstName>Bertrand</foaf:firstName>
+			    <foaf:family_name>Isidor</foaf:family_name>
+			    <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+			  </foaf:Person>
+			</rdf:first>
+			<rdf:rest>
+			  <rdf:List>
+			    <rdf:first>
+			      <foaf:Person rdf:about="#PierreLindenbaum">
+				<foaf:name>Pierre  Lindenbaum</foaf:name>
+				<foaf:title>Dr</foaf:title>
+				<foaf:firstName>Pierre</foaf:firstName>
+				<foaf:family_name>Lindenbaum</foaf:family_name>
+				<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+			      </foaf:Person>
+			    </rdf:first>
+			    <rdf:rest>
+			      <rdf:List>
+				<rdf:first>
+				  <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Pichon%20O%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+				    <foaf:name>Olivier  Pichon</foaf:name>
+				    <foaf:title>Dr</foaf:title>
+				    <foaf:firstName>Olivier</foaf:firstName>
+				    <foaf:family_name>Pichon</foaf:family_name>
+				    <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+				  </foaf:Person>
+				</rdf:first>
+				<rdf:rest>
+				  <rdf:List>
+				    <rdf:first>
+				      <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22B&#xE9;zieau%20S%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					<foaf:name>Stéphane  Bézieau</foaf:name>
+					<foaf:title>Dr</foaf:title>
+					<foaf:firstName>Stéphane</foaf:firstName>
+					<foaf:family_name>Bézieau</foaf:family_name>
+					<foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+				      </foaf:Person>
+				    </rdf:first>
+				    <rdf:rest>
+				      <rdf:List>
+					<rdf:first>
+					  <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Dina%20C%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					    <foaf:name>Christian  Dina</foaf:name>
+					    <foaf:title>Dr</foaf:title>
+					    <foaf:firstName>Christian</foaf:firstName>
+					    <foaf:family_name>Dina</foaf:family_name>
+					    <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					  </foaf:Person>
+					</rdf:first>
+					<rdf:rest>
+					  <rdf:List>
+					    <rdf:first>
+					      <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Jacquemont%20S%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					        <foaf:name>Sébastien  Jacquemont</foaf:name>
+					        <foaf:title>Dr</foaf:title>
+					        <foaf:firstName>Sébastien</foaf:firstName>
+					        <foaf:family_name>Jacquemont</foaf:family_name>
+					        <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					      </foaf:Person>
+					    </rdf:first>
+					    <rdf:rest>
+					      <rdf:List>
+					        <rdf:first>
+					          <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Martin-Coignard%20D%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					            <foaf:name>Dominique  Martin-Coignard</foaf:name>
+					            <foaf:title>Dr</foaf:title>
+					            <foaf:firstName>Dominique</foaf:firstName>
+					            <foaf:family_name>Martin-Coignard</foaf:family_name>
+					            <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					          </foaf:Person>
+					        </rdf:first>
+					        <rdf:rest>
+					          <rdf:List>
+					            <rdf:first>
+					              <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Thauvin-Robinet%20C%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                <foaf:name>Christel  Thauvin-Robinet</foaf:name>
+					                <foaf:title>Dr</foaf:title>
+					                <foaf:firstName>Christel</foaf:firstName>
+					                <foaf:family_name>Thauvin-Robinet</foaf:family_name>
+					                <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					              </foaf:Person>
+					            </rdf:first>
+					            <rdf:rest>
+					              <rdf:List>
+					                <rdf:first>
+					                  <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Le Merrer%20M%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                    <foaf:name>Martine  Le Merrer</foaf:name>
+					                    <foaf:title>Dr</foaf:title>
+					                    <foaf:firstName>Martine</foaf:firstName>
+					                    <foaf:family_name>Le Merrer</foaf:family_name>
+					                    <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					                  </foaf:Person>
+					                </rdf:first>
+					                <rdf:rest>
+					                  <rdf:List>
+					                    <rdf:first>
+					                      <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Mandel%20JL%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                        <foaf:name>Jean-Louis  Mandel</foaf:name>
+					                        <foaf:title>Dr</foaf:title>
+					                        <foaf:firstName>Jean-Louis</foaf:firstName>
+					                        <foaf:family_name>Mandel</foaf:family_name>
+					                        <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					                      </foaf:Person>
+					                    </rdf:first>
+					                    <rdf:rest>
+					                      <rdf:List>
+					                        <rdf:first>
+					                          <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22David%20A%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                            <foaf:name>Albert  David</foaf:name>
+					                            <foaf:title>Dr</foaf:title>
+					                            <foaf:firstName>Albert</foaf:firstName>
+					                            <foaf:family_name>David</foaf:family_name>
+					                            <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					                          </foaf:Person>
+					                        </rdf:first>
+					                        <rdf:rest>
+					                          <rdf:List>
+					                            <rdf:first>
+					                              <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Faivre%20L%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                                <foaf:name>Laurence  Faivre</foaf:name>
+					                                <foaf:title>Dr</foaf:title>
+					                                <foaf:firstName>Laurence</foaf:firstName>
+					                                <foaf:family_name>Faivre</foaf:family_name>
+					                                <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					                              </foaf:Person>
+					                            </rdf:first>
+					                            <rdf:rest>
+					                              <rdf:List>
+					                                <rdf:first>
+					                                  <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Cormier-Daire%20V%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                                    <foaf:name>Valérie  Cormier-Daire</foaf:name>
+					                                    <foaf:title>Dr</foaf:title>
+					                                    <foaf:firstName>Valérie</foaf:firstName>
+					                                    <foaf:family_name>Cormier-Daire</foaf:family_name>
+					                                    <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					                                  </foaf:Person>
+					                                </rdf:first>
+					                                <rdf:rest>
+					                                  <rdf:List>
+					                                    <rdf:first>
+					                                    <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Redon%20R%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                                    <foaf:name>Richard  Redon</foaf:name>
+					                                    <foaf:title>Dr</foaf:title>
+					                                    <foaf:firstName>Richard</foaf:firstName>
+					                                    <foaf:family_name>Redon</foaf:family_name>
+					                                    <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					                                    </foaf:Person>
+					                                    </rdf:first>
+					                                    <rdf:rest>
+					                                    <rdf:List>
+					                                    <rdf:first>
+					                                    <foaf:Person rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&amp;Cmd=Search&amp;Term=%22Le Caignec%20C%22[Author]&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DiscoveryPanel.Pubmed_RVAbstractPlus">
+					                                    <foaf:name>Cédric  Le Caignec</foaf:name>
+					                                    <foaf:title>Dr</foaf:title>
+					                                    <foaf:firstName>Cédric</foaf:firstName>
+					                                    <foaf:family_name>Le Caignec</foaf:family_name>
+					                                    <foaf:made rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21378989"/>
+					                                    </foaf:Person>
+					                                    </rdf:first>
+					                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+					                                    </rdf:List>
+					                                    </rdf:rest>
+					                                  </rdf:List>
+					                                </rdf:rest>
+					                              </rdf:List>
+					                            </rdf:rest>
+					                          </rdf:List>
+					                        </rdf:rest>
+					                      </rdf:List>
+					                    </rdf:rest>
+					                  </rdf:List>
+					                </rdf:rest>
+					              </rdf:List>
+					            </rdf:rest>
+					          </rdf:List>
+					        </rdf:rest>
+					      </rdf:List>
+					    </rdf:rest>
+					  </rdf:List>
+					</rdf:rest>
+				      </rdf:List>
+				    </rdf:rest>
+				  </rdf:List>
+				</rdf:rest>
+			      </rdf:List>
+			    </rdf:rest>
+			  </rdf:List>
+			</rdf:rest>
+		      </rdf:List>
+		    </bibo:authorList>
+		    <dcterms:language>eng</dcterms:language>
+		  </bibo:Article>
+	</foaf:made>
 	
 	<foaf:made>
 		<bibo:Article rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/19755503">

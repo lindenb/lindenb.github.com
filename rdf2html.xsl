@@ -35,6 +35,7 @@ Author:
 <xsl:template match="rdf:RDF">
 <html>
 <head>
+<meta http-equiv="Pragma" content="no-cache"/>
 <title>
 <xsl:value-of select="$me/foaf:name"/>
 <xsl:text>'s FOAF Profile.</xsl:text>
@@ -86,7 +87,7 @@ dd	{
 	}
 
 </style>
-<script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
+<script src="http://static.simile.mit.edu/timeline/api-2.3.1/timeline-api.js?bundle=true" type="text/javascript"></script>
 <script type="text/javascript">
 /* timeline */
 var tl=null;
@@ -153,6 +154,7 @@ window.addEventListener("resize",windowResized,true);
 </head>
 <body>
 <div id="page">
+
 <xsl:apply-templates select="$me"/>
 </div>
 </body>
@@ -279,6 +281,14 @@ window.addEventListener("resize",windowResized,true);
 
 <xsl:template match="foaf:OnlineAccount">
 <dt>
+<xsl:if test="foaf:accountServiceHomepage/@rdf:resource='http://github.com/'">
+<xsl:element name="a">
+ 	<xsl:attribute name="href">
+ 		<xsl:value-of select="foaf:accountProfilePage/@rdf:resource"/>
+ 	</xsl:attribute>
+ 	<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+ </xsl:element>
+</xsl:if>
 <xsl:if test="foaf:thumbnail/@rdf:resource">
  <xsl:element name="img">
  	<xsl:attribute name="src">
