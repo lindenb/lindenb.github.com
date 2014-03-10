@@ -1,0 +1,9 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>hg19</os:ShortName>
+<os:Description>Search the Human Genome hg19 in the Genome Browser at UCSC</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUAACHL5eaKxcZ4p7UoVXn29vml1tVVAEtghJ7e7u4zADNvKHm119d0vLwEK16gusi18uaUc6Lk%2BPZ41shFdo4ABETX8u%2BDv76U49hrtbVtX4693t7%2F%2F%2F9mAGaZzMw%2BYIPJ9%2B6Uz82gqL6p5dsAADqUxcdknKrV5%2BeOjq3v9%2FfF3t2blLYAADNGAEV0tLWI1csRPGr3%2F%2F6y%2F%2B17vb1jMXZzPoJaAFut1ta7s8q3398AE02CVZEaABqP9Nulz8%2Fm8O8WtGRvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH2AMKDDU6d4NMNgAAAIlJREFUGNNtj8EKAjEMRPc0sVuQnjwZ8SKIS0EKtq6F%2Bf%2FPsjWLumIuybxDZmbY%2F8ywUvUDXK595QWQcgTdGxBJCOLixxc4EZCmZx3tR7sZUhBNbgFgzZoTeTDAqBJQIkoxkM9EM6kTLJjuCq%2FbgpQNxP5k8wBuYtH7mpvPpOsuKt%2FlvL%2F%2Fb9vmCTmqHkDyQZEDAAAAAElFTkSuQmCC</os:Image>
+<SearchForm>http://genome.ucsc.edu/cgi-bin/hgGateway</SearchForm>
+<os:Url type="text/html" method="GET" template="http://genome.ucsc.edu/cgi-bin/hgTracks?org=Human&amp;db=hg19&amp;position={searchTerms}">
+</os:Url>
+</SearchPlugin>

@@ -1,0 +1,9 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Hapmap</os:ShortName>
+<os:Description>Search Hapmap v. 28 Build 36</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH2AMKEgUcbHBxQgAAAxtJREFUKM8BEAPv%2FAHXgX39M0j6Ghv06%2FYUlnUQ%2Bv74RVTwHyYLxr3xREsH%2B%2Fz%2B9wAG5dIE%2BPbvOkkbiGwDa15vAAMPG%2FjnCSUf8AAiCrGfCs%2FF8DNG%2BStBF4Vz%2BAcQEqCJ%2BBgoAgEQ8CIrBwQZBPsPGxrJtAD%2F%2B%2F3KyRLU3Oh3mg7ArAkIDfrfz%2BZvgf0ZIQv8AAImJweehhEF%2FgTOwwQb2MMAAf3lM1EK5twXGuz7Pi3lHiAZj3AASF%2F%2BFyUB59oGvqUHxQrzZYIMz8n%2BFhwCAhQG%2FtnjDeDYE%2BnS8jo%2F9Ov7GCMV6myH7i45Dc27DOfc7HWYAgH4%2FOHR%2FfvyA9PIBAGttwT%2B%2Bw%2F84vkxQ%2BoNHRHApvc9TQMPHfzy7BCYggz47v0VIe5RZgf38Qndy%2B1ogwHsi4YILjT1GR%2Fd9AkevLHuIizwGy8M2b8Lz9rnNDUmg2vyYXcA9%2BUF0c78O0kLta0B9fP09fj%2B4dv2IQ767Oz66AIQD9zOEce18U1iBycZ5dbvE8auIaKP6V5x%2FQALDcSoAvb6%2F%2BDa%2BxsT%2BOr0BOUBFRj65Q7RvPJIaRHRvP7k7hEiE%2FojMvQHChufiQv37gT%2FBwHIye0iIAbm4vHx9QgRCfUUBfnr7P8QzbT2GjH%2F%2FvsKHg%2FnBR8D1NIYimoN9vgFAPsB5ubw6u378u0CDgj8IPLQ68zjBB4R%2BAQa%2F%2FftDOnn6j5HGg32%2FAIP4sbRIIVpAB4sBOvrAPPvAAgU%2FCD13vp9eRFvcOsYLAH07Qnq8es9Sh4eBwKpqggwKyBCN9oDoAcSFQTt8PoREAIh99%2F4cHUHh4vkBSEEAf0S9OnmMz0iJwz7pqIH4uD75%2FD9SBAFJCry9vYCEQ4FISMJ97S9BId%2B5RUuBhANFtnD%2BI%2BJHQfpBffuCAsI%2FQQG%2FQ0a6f4Y%2F%2F%2F%2FHyAOBAj%2F3wf9IQN2ceLe9gMEABbjy%2FminRFtZQMBB%2F7k5gT%2BAuseK%2BkoSPYGAyTGqgs4JgQDCQn7BgPi3fkFA%2FsX7%2BH5gIcNnZv%2FGh7649wB%2Ff7sHirnBh39AAEmx6sJ6t8BsuHc1nvwBfaK9AAAAABJRU5ErkJggg%3D%3D</os:Image>
+<SearchForm>http://www.hapmap.org/cgi-perl/gbrowse/hapmap28_B36/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://www.hapmap.org/cgi-perl/gbrowse/hapmap28_B36/?name={searchTerms}">
+</os:Url>
+</SearchPlugin>

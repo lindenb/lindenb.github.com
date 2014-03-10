@@ -1,0 +1,8 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Ensembl (All)</os:ShortName>
+<os:Description>Search Ensembl genome browser - All species</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGMUExURfr6+n5+fvf39/////Pz8/X19YODg+/v7/Ly8vj4+Kenp+jo6IKCguXl5d3d3Rc1gfj5+TRuvRg3lDZrw0EJCR83en+s6B9Lr+ve3jQ9YGooKGqU3rbS8Wh0mDUhIZHB7cjIyOHLy+3t7VVbcJC29t7e3mh5j1hgdBxBoHyc4NPV2N4vL0VUbGZ8nxoxa62trefy+eVYWCNJkvDw8E2EzxxCnsrN4osAABc0fOHe3uKgoMni+vbx8Rk4g87Ozs8eHo5KSqsMDNfc5bO7zk5ehGkAAOvr67+/vx9Iq9jQ0IKCiRk7mDdkxFxvknyr7VeDwPHLy3R5hebc3Oj1/pjD8OA9Pd3l7lWF02J0leTt9GZxh3wrK1Zdc/ilpYQAAOPj42yh5cbGx7S0tIyEhOR9fUUrK3QAAJwvL1MAAMrKyiU6arHQ9Bk9ltnOzs4jI08qKlN0x7W0tBhBfnp6emyN3o6Ojubm5vP2+HJdXcnJyaLB4Y18fO2Fhbq6uhg1idvb2x5Cndmvr211jP///yHKfPcAAACEdFJOU///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AJfSNr4AAAEaSURBVHjaYmhudmdjhAKu5uZmgABiaG5m42NlAAOWijyHZoAAAgowsiqxs7Nz89YzpJiLNAMEEEMzMyMDBysHh1sZH4NhmhwXQACBBVgjs8WkNZ0ZQjMKGQECCCRgIC9sIeniUeRpn8rECBBAQAFZkzplLYEqcZ0gx1IGRoAAYmgOFhSKCJNJMFK3DIhWZWAECCCG5hANUV/dKK9KBqbYamMGRoAAYmgO9w5kYQI5g9Mqk4WBESCAGJp9cpqAvHJrJxsJFqAAQAAxNBeYNpSo+PmrNWqn5zIxMAIEEEOzWZYtv15MEmdNnGsyJwMjQAABrS1WSOQGalKUyrdjYGIECCCgX3h4mRiggCmeDSCAgAK1PIxwwKYPEGAAAEovZt26cR4AAAAASUVORK5CYII=</os:Image>
+<os:Url type="text/html" method="GET" template="http://www.ensembl.org/common/psychic?q={searchTerms};site=ensembl_all">
+</os:Url>
+</SearchPlugin>

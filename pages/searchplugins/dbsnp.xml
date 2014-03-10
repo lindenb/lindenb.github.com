@@ -1,0 +1,9 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>dbSNP</os:ShortName>
+<os:Description>Search dbSNP at NCBI</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAACq0lEQVQozwXBXYsbVRwH4N95mbfMZJLNJtnW3XSx2zUWWi2KUC%2B8EEQU%2FAyCIt545xfwY4jgN%2FBCUFDRFkWL2opFKi67xl2b3ZC1yeZlkplM5sw55%2B%2FzME0jYG5xVuBgigepeqyUsgwAZ5AVJwzdK03clrjGsAPEEphbTBf28WhxrIzlzrbrVgM%2FZhCFWpXr5XRZ5OKwVXdDRBxcEk4WdHqe3Ne0rvrdINgH6xBiAJ675M4gzQ5SdThMJts1EaIjV%2FhzPP%2FX2FW7sRezF3%2F5bfrxp58oGzHCRt1%2B%2BMFb156%2BxYrRMhuNkz%2Bc2lq8%2F1G8yrONyvWmc1tg79LlF4xs9Y6HYSV67513n%2B%2FecAFfirRISjMSlalMi1PhduKgy3HVosV4%2Fc03Xpsv9VNb7Vs3bxDI4pJEtxpOJtmPK4y5Nkq6oaLNH%2B6fLAr390cH82n2yssvbTVraW7vPXh0nrC7v%2Fal0%2BEOS%2FWQA1ZI%2F2KmPvv8zpNZcff7e0dHR8e9o2%2B%2B%2B7Z%2Fdv71nZ8e%2FtX%2F4qufGepMcG1yTsIqnStYBV4SK0iUVhg4pRUlOYrcQgtNvARZAmOSc8u0LrWdWTYDKznIkgEjTiAyRAasgEjW5cSWMhBt7jmRKTNVnkThhe%2BkgbSRxxyUkY%2BqayJ3HYdL1%2B9neQ%2FGi8RVNqC3x9NC06ZRO%2FuXX5%2BMRTVq6pKKIt9oRP9dnNVb%2BT%2BDLythFjBvt9GRTby69nqJ6vlxZhHutPY4ChEEBG1wfmXrSUJ%2F1%2BpD0mIzes7DvuR4ZiuMmFgt8rPh%2BmHkDSpu25EVgi50kuYDpRMw24z2NtwuxzbT1CckCqez9eE87xlMiOVcaGLGWsZM4KJdD643%2FJsSu4RYAlUG6YGavq36aonVCheFnYGMJ6ohGjXsVvAsxzYQAd7%2FMmJoEj56PbgAAAAASUVORK5CYII%3D</os:Image>
+<SearchForm>http://www.ncbi.nlm.nih.gov/snp</SearchForm>
+<os:Url type="text/html" method="GET" template="http://www.ncbi.nlm.nih.gov/snp/?term={searchTerms}">
+</os:Url>
+</SearchPlugin>
