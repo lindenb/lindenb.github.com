@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pubmedApp">
+<head>
+   <meta charset="utf-8"/>
+   <title>Angular</title>
+	<script src="../../../resources/angular/angular.js"></script>
+	<script src="../../../resources/js/jquery/jquery-2.1.0.min.js"></script>
+	<link href="../../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../../../resources/css/lindenb.css" rel="stylesheet"/>
+	<script src="../../../resources/bootstrap/js/bootstrap.min.js"></script>
+	<script src="pubmed_controller.js"></script>
+</head>
+<body  ng-controller="PubmedCtrl">
+
+<div class="container-fluid" >
+<div class="row-fluid">
+ <div class="span2">
+<!--Sidebar content-->
+ 
+Search: <input ng-model="myquery">
+
+<select ng-model="orderProp">
+<option value="title">Title</option>
+<option value="year">Year</option>
+<option value="authors">Authors</option>
+</select>
+
+</div>
+
+<div class="span10">
+ <table>
+ <caption>{{myquery}}</caption>
+<tr ng-repeat="article in articles | filter:myquery  | orderObjectBy:orderProp">
+<td><b>"{{article.title}}"</b><br/><span ng-repeat="author in article.authors "> {{author.lastName}} </span></td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/{{article.pmid}}">PMID. {{article.pmid}}</a></td>
+</tr>
+</table>
+</div>
+</div>
+
+<div>Pierre Lindenbaum</div>
+</div>
+
+</body>
+</html>
+
