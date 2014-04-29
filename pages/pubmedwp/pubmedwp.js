@@ -153,7 +153,13 @@ function buildWpPageInfo(root,label,data)
 		F= document.createElement("a");
 		F.setAttribute("href","http://en.wikipedia.org/wiki/"+label);
 		F.setAttribute("target","_blank");
-		F.appendChild(document.createTextNode("Create this Article"));
+		F.appendChild(document.createTextNode("Create this Article."));
+		E.appendChild(F);
+		E.appendChild(document.createTextNode(" "));
+		F= document.createElement("a");
+		F.setAttribute("href","http://biogps.org/?query="+encodeURIComponent(label));
+		F.setAttribute("target","_blank");
+		F.appendChild(document.createTextNode("Create an article via BioGPS."));
 		E.appendChild(F);
 		
 		root.setAttribute("class","alert alert-danger");
