@@ -138,6 +138,7 @@ function changeButtonName(id,content,defaultValue)
 	}
 
 
+
 function buildWpPageInfo(root,label,data)
 	{
         removeAllChildren(root);
@@ -155,23 +156,45 @@ function buildWpPageInfo(root,label,data)
 		F.setAttribute("target","_blank");
 		F.appendChild(document.createTextNode("Create this Article."));
 		E.appendChild(F);
+		
 		E.appendChild(document.createTextNode(" "));
+		
+		F= document.createElement("a");
+		F.setAttribute("href","https://en.wikipedia.org/w/index.php?search="+ encodeURIComponent(label) +"&title=Special%3ASearch&go=Go");
+		F.setAttribute("target","_blank");
+		F.appendChild(document.createTextNode("Search in Wikipedia"));
+		E.appendChild(F);
+		
+		E.appendChild(document.createTextNode(" "));
+		
+		
 		F= document.createElement("a");
 		F.setAttribute("href","http://biogps.org/?query="+encodeURIComponent(label));
 		F.setAttribute("target","_blank");
 		F.appendChild(document.createTextNode("Create an article via BioGPS."));
-		E.appendChild(F);
+		E.appendChild(F);		
+		
 		
 		root.setAttribute("class","alert alert-danger");
 		}
 	else
 		{
 		E.appendChild(document.createTextNode("OK, article exists in wikipedia: "));
+		
 		var F= document.createElement("a");
-		F.setAttribute("href","https://en.wikipedia.org/w/index.php?title="+encodeURIComponent(label) +"&action=edit");
+		F.setAttribute("href","https://en.wikipedia.org/w/index.php?title="+ encodeURIComponent(label) +"&action=edit");
 		F.setAttribute("target","_blank");
 		F.setAttribute("title","Edit "+label);
-		F.appendChild(document.createTextNode(label));
+		F.appendChild(document.createTextNode("Edit "+label));
+		E.appendChild(F);
+		
+		E.appendChild(document.createTextNode(" "));
+		
+		F= document.createElement("a");
+		F.setAttribute("href","https://en.wikipedia.org/wiki/"+encodeURIComponent(label));
+		F.setAttribute("target","_blank");
+		F.setAttribute("title","View "+label);
+		F.appendChild(document.createTextNode("View "+label));
 		E.appendChild(F);
 		
 		root.setAttribute("class","alert alert-success");
