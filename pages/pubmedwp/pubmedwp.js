@@ -9,59 +9,59 @@ var     pubmedwp= {
 		{"label":"","value":"","template":""},
 			{
 			"value":"substrate_for",
-			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] was found to be a [[Substrate_(biochemistry)|substrate]] for {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] was found to be a [[Substrate_(biochemistry)|substrate]] for {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"biomarker_for",
-			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] is used to screen {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] is used to screen {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"decrease_associated with disease",
-			"template": "Patients who lack [[__SUBJECT__|__SUBJECT__]] have {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "Patients who lack [[__SUBJECT__|__SUBJECT__]] have {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"genetic_defect_results_in_disease",
-			"template": "Mutations in [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "Mutations in [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"involved_in_development_of",
-			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] plays a role in [[Developmental_biology|development] of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] plays a role in [[Developmental_biology|development] of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"is_bound_by",
-			"template": "{{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}) was found to bind to the protein encoded by [[__SUBJECT__|__SUBJECT__]].{{Cite pmid|__PMID__}}"
+			"template": "{{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}) was found to bind to the protein encoded by [[__SUBJECT__|__SUBJECT__]].<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"might_be_useful_for_treating",
-			"template": "[[__SUBJECT__|__SUBJECT__]] could be used to develop a treatment for {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "[[__SUBJECT__|__SUBJECT__]] could be used to develop a treatment for {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"mutation_results_in",
-			"template": "Mutations in  [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "Mutations in  [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"overexpression_results_in",
-			"template": "Mutations causing  [[__SUBJECT__|__SUBJECT__]] to be [[gene expression|overexpressed]] are one cause of  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "Mutations causing  [[__SUBJECT__|__SUBJECT__]] to be [[gene expression|overexpressed]] are one cause of  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"phosphorylated_by",
-			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]]  is [[Phosphorylation|phosphorylated]] by  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]]  is [[Phosphorylation|phosphorylated]] by  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"PPI",
-			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]]  has been shown [[Protein-protein_interaction|interact]] with  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]]  has been shown [[Protein-protein_interaction|interact]] with  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"produces",
-			"template": "{{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}} is produced by [[__SUBJECT__|__SUBJECT__]].{{Cite pmid|__PMID__}}"
+			"template": "{{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}} is produced by [[__SUBJECT__|__SUBJECT__]].<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"regulates_biological_process",
-			"template": "[[__SUBJECT__|__SUBJECT__]] is a key regulator of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": "[[__SUBJECT__|__SUBJECT__]] is a key regulator of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"upregulated_in_relation_to_cancer",
-			"template": " [[gene expression|Overexpression]] of [[__SUBJECT__|__SUBJECT__]] appears to be important in the development of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.{{Cite pmid|__PMID__}}"
+			"template": " [[gene expression|Overexpression]] of [[__SUBJECT__|__SUBJECT__]] appears to be important in the development of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			}
 			
 		]
