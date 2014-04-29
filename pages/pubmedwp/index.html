@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+   <title>Pubmed/Wikipedia</title>
+   <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+   <link href="../../resources/css/lindenb.css" rel="stylesheet"></link>
+   <script src="../../resources/js/jquery/jquery-2.1.0.min.js"></script>
+   <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="pubmedwp.js"></script>
+
+   <link href="pubmedwp.css" rel="stylesheet"></link>
+
+
+</head>
+<body>
+<div class="container">
+
+<div class="page-header">
+      <h1>Pubmed/Wikipedia</h1>
+      <p>A tool to create semantic wiki text for <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> from <a href="http://www.ncbi.nlm.nih.gov/pubmed/">Pubmed</a>. The URL parameter <code>?pmid=PMID</code> should load a specific article, for example <a href="index.html?pmid=24763291">index.html?pmid=24763291</a></p>
+      <!-- <p><a class="btn btn-primary btn-lg" role="button" href="#">More...</a> -->
+</div>
+
+
+<div>
+<div class="text-center">
+	 	<label for="pmid">Enter a pubmed identifier:</label>
+	 	<input id="pmid" name="pmid" type="text" value="http://www.ncbi.nlm.nih.gov/pubmed/24763291?dopt=Abstract"/>
+		<button onclick="fetch_article()"  class="btn btn-primary ">Fetch</button>
+</div>
+
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<div id="article" class="pubmedarticle"></div>
+	</div>
+	
+</div>
+
+<div class="row">
+<div class="form-group">
+
+	<div class="form-group">
+		<label class="col-sm-1 control-label">Subject:</label>
+		<button id="subjectb" onclick="select_subject()" class="btn btn-default">Subject</button>
+		<span id="sujectw">&#8592;  Select the 'subject' and click this button</span>
+	</div>
+	
+	<div class="form-group">
+		<label  class="col-sm-1 control-label">Predicate:</label>
+		<select id="swl" name="swl" onchange="select_predicate(this);" class="btn btn-default"></select>
+	</div>
+	
+	<div class="form-group">
+		<label  class="col-sm-1 control-label">Object:</label>
+		<button id="objectb" onclick="select_object()" class="btn btn-default">Object</button>
+		<span id="objectw">&#8592; Select the 'object' and click this button</span>
+	</div>
+
+</div>
+</div>
+
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<div id="output" class="output"></div>
+	</div>
+</div>
+
+
+</div>
+
+<div class="row">
+	<div >
+<div class="citeentrezajax">Author: <a href="https://github.com/lindenb/jvarkit">Pierre Lindenbaum PhD</a>. Powered with <a href="http://entrezajax.appspot.com/developer.html">Entrez-Ajax</a> (<a href="http://www.scfbm.org/content/5/1/6/abstract">Source Code for Biology and Medicine 2010, 5:6  doi:10.1186/1751-0473-5-6</a>)</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
