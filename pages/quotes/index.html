@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+<link href="../../resources/css/lindenb.css" rel="stylesheet"></link>
+
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"></link>
+
+<script src="../../resources/js/jquery/jquery-2.1.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"></link>
+
+<script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+
+
+<style>
+.ui-autocomplete-loading {
+background: white url('http://jqueryui.com/resources/demos/autocomplete/images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+#city { width: 25em; }
+</style>
+
+ <script>
+ 
+function makeXML()
+	{
+	var XML = document.createElement("Quote");
+	
+	
+	XML.appendChild( document.createTextNode(document.getElementById("input").value) );
+	var serializer = new XMLSerializer();
+	document.getElementById("xml").appendChild(document.createTextNode(serializer.serializeToString(XML)));
+	} 
+ 
+$(function() {
+	function log( message )
+		{
+		
+		}
+
+	$( "#city" ).autocomplete(
+		{
+		source: function( request, response )
+			{
+			$.ajax(
+				{
+				url: "http://en.wikipedia.org/w/api.php",
+				dataType: "jsonp",
+				data:
+					{
+					action:"opensearch",
+					limit: 15,
+					format:"json",
+					suggest:true,
+					namespace: "0|4",
+					search: request.term
+					},
+				error: function(jqXHR,textStatus,errorThrown)
+					{
+					console.log(""+textStatus+";"+errorThrown);
+					},
+				success: function( data )
+					{
+					//console.log("Success "+JSON.stringify(data));
+					data[1].push(data[0]);
+					response( data[1]);
+					}
+				});
+			},
+		minLength: 2,
+		select: function( event, ui )
+			{
+			
+			if(!ui.item)
+				{
+				return ;
+				}
+			//log( ui.item ?"Selected: " + ui.item.label : "Nothing selected, input was " + this.value);
+			//alert(ui.item.label);
+			$('#city').next('select').focus();
+			
+
+			
+			var tr=document.createElement("tr");
+			var td=document.createElement("td");
+			var select=document.createElement("select");
+			td.appendChild(select);
+			var predicates=[
+				{label:"keyword",uri:""},
+				{label:"author",uri:""},
+				{label:"location",uri:""}
+				];
+			for(i in predicates)
+				{
+				var option=document.createElement("option");
+				option.appendChild(document.createTextNode(predicates[i].label));
+				option.setAttribute("value",option);
+				select.appendChild(option);
+				}
+			tr.appendChild(td);
+			
+			td=document.createElement("td");
+			var anchor=document.createElement("a");
+			anchor.setAttribute("href","http://en.wikipedia.org/wiki/"+ui.item.label);
+			anchor.setAttribute("target","_blank");
+			anchor.appendChild(document.createTextNode(JSON.stringify(ui.item.label)));
+			td.appendChild(anchor);
+			tr.appendChild(td);
+			
+			td=document.createElement("td");
+			anchor=document.createElement("a");
+			/*anchor.onclick=function(evt)
+				{
+				alert("x"+JSON.stringify(evt.target));
+				}; */
+			anchor.setAttribute("href","#");
+			anchor.setAttribute("onclick","rmRow(this)");
+			
+			anchor.appendChild(document.createTextNode("Remove"));
+			td.appendChild(anchor);
+			tr.appendChild(td);
+			
+			tr.dataset.meta={
+				"select":select,
+				"value":ui.item.label
+				};
+			
+			document.getElementById("tbody").appendChild(tr);
+			makeXML();
+			},
+		open: function()
+			{
+			$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+			},
+		close: function()
+			{
+			$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+			}
+		});
+	});
+
+function rmRow(a)
+	{
+	var tr= a.parentNode.parentNode;
+	document.getElementById("tbody").removeChild(tr);
+	makeXML();
+	}
+</script>
+</head>
+<body>
+<div class="container">
+ <div class="page-header">
+      <h3>Quotes</h3>
+      <p>TODO</p>
+      <!-- <p><a class="btn btn-primary btn-lg" role="button" href="#">More...</a> -->
+</div>
+<div class="row">
+	<div class="col-sm-4 col-md-4">
+		<div>
+		
+		<label for="city">Test: </label> <input id="city" size="10"/>
+		<div class="ui-widget" style="margin-top:2em; font-family:Arial"></div>
+		
+		</div>
+		<div>
+		<label for="input">Quote:</label>
+		<textarea id="input" style="width:100%;" rows="15"></textarea>
+		</div>
+	</div>
+	
+	<div class="col-sm-4 col-md-4">
+		<table class="table table-striped table-bordered table-condensed">
+		<thead>
+		<caption>Predicate</caption>
+		<tr>
+			<th>Predicate</th>
+			<th>Article</th>
+			<th>Remove</th>
+		</tr>
+		</thead>
+		<tbody id="tbody">
+		</tbody>
+		</table>
+	</div>
+	<div class="col-sm-4 col-md-4">
+		<label for="xml">XML: </label>
+		<textarea id="xml" style="width:100%;" rows="15"></textarea>
+	</div>
+<!-- <div class="ui-widget"> -->
+</div>
+
+</div>
+
+</body>
+</html>
