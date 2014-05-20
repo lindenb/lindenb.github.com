@@ -24,18 +24,148 @@ background: white url('http://jqueryui.com/resources/demos/autocomplete/images/u
 </style>
 
  <script>
- 
+
+var RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+var DC = "http://purl.org/dc/elements/1.1/";
+var MY = "https://github.com/lindenb/quotes/";
+var PREDICATES=[
+		{label:"keyword",uri:"q:keyword"},
+		{label:"author",uri:"dc:author"},
+		{label:"location",uri:"q:location"},
+		{label:"source",uri:"dc:source"}
+		];
+		
+function removeAllChildren(node)
+	{
+	while(node.firstChild) 
+		{
+		node.removeChild(node.firstChild);
+		}
+	return node;
+	}
+
+function looksLikeUri(uri)
+	{
+	return uri.indexOf("http://")==0 ||  uri.indexOf("https://")==0  ||  uri.indexOf("urn:")==0;
+	}
+
 function makeXML()
 	{
-	var XML = document.createElement("Quote");
+	var doc= document.implementation.createDocument(RDF, 'rdf:RDF', null);
+	var root = doc.documentElement;
+	//root.setAttribute("xmlns:rdf",RDF);
+	root.setAttribute("xmlns:dc",DC);
+	root.setAttribute("xmlns:q",MY);
+	root.appendChild( doc.createTextNode("\n\t"));
+	
+	var Quote= doc.createElement("q:Quote");
+	root.appendChild( Quote);
+	Quote.appendChild( doc.createTextNode("\n\t\t"));
+	
+	var qtext= doc.createElement("q:quote");
+	var sellang= document.getElementById("sellang");
+	qtext.setAttribute("xml:lang",sellang.options[sellang.selectedIndex].value);
+	qtext.appendChild( doc.createTextNode(document.getElementById("input").value) );
+	Quote.appendChild( qtext);
+	
+
+	var trlist = document.evaluate(
+		"tr",
+		document.getElementById("tbody"),
+		null,
+		XPathResult.ANY_TYPE,
+		null
+		);
+	var tr=trlist.iterateNext(); 
+	while(tr)
+		{
+		var select= document.evaluate(
+				"td[1]/select[1]",
+				tr,
+				null,
+				XPathResult.FIRST_ORDERED_NODE_TYPE,
+				null
+				);
+		
+		var prop= doc.createElement(PREDICATES[select.singleNodeValue.selectedIndex].uri);
+		var uri=tr.getAttribute("rdf:uri");
+		if(looksLikeUri(uri))
+			{ 
+			prop.setAttribute("rdf:resource",uri);
+			}
+		else
+			{
+			prop.appendChild( doc.createTextNode(uri));
+			}
+		Quote.appendChild( doc.createTextNode("\n\t\t"));
+		Quote.appendChild(prop );
+		tr=trlist.iterateNext(); 
+		}
+	
+	Quote.appendChild( doc.createTextNode("\n\t"));
+	root.appendChild( doc.createTextNode("\n"));
+	
+	var serializer = new XMLSerializer();	
+	removeAllChildren(document.getElementById("xml")).appendChild(document.createTextNode(serializer.serializeToString(doc)));
+	} 
+ 
+function createProperty(label,resource)
+	{
+	var tr=document.createElement("tr");
+	
+	tr.setAttributeNS(RDF,"rdf:label",label);
+	if(resource!=null) tr.setAttributeNS(RDF,"rdf:uri",resource);
+	
+	var td=document.createElement("td");
+	var select=document.createElement("select");
+	select.addEventListener('change',function(){ makeXML();},false);
+	td.appendChild(select);
+	
+	for(i in PREDICATES)
+		{
+		var option=document.createElement("option");
+		option.appendChild(document.createTextNode(PREDICATES[i].label));
+		option.setAttribute("value",option);
+		select.appendChild(option);
+		}
+	tr.appendChild(td);
+	
+	td=document.createElement("td");
+	if(resource!=null)
+		{
+		var anchor=document.createElement("a");
+		anchor.setAttribute("href",resource );
+		anchor.setAttribute("target","_blank");
+		anchor.appendChild(document.createTextNode(label));
+		td.appendChild(anchor);
+		}
+	else
+		{
+		td.appendChild(document.createTextNode(label));
+		}
+	tr.appendChild(td);
+	
+	td=document.createElement("td");
+	anchor=document.createElement("a");
+	/*anchor.onclick=function(evt)
+		{
+		alert("x"+JSON.stringify(evt.target));
+		}; */
+	anchor.setAttribute("href","#");
+	anchor.setAttribute("onclick","rmRow(this)");
+	
+	anchor.appendChild(document.createTextNode("Remove"));
+	td.appendChild(anchor);
+	tr.appendChild(td);
 	
 	
-	XML.appendChild( document.createTextNode(document.getElementById("input").value) );
-	var serializer = new XMLSerializer();
-	document.getElementById("xml").appendChild(document.createTextNode(serializer.serializeToString(XML)));
+	return tr;
 	} 
  
 $(function() {
+
+	
+
 	function log( message )
 		{
 		
@@ -65,7 +195,18 @@ $(function() {
 				success: function( data )
 					{
 					//console.log("Success "+JSON.stringify(data));
-					data[1].push(data[0]);
+					for(var i in data[1])
+						{
+						var v=data[1][i];
+						data[1][i]={
+							"label": v,
+							"value":"http://en.wikipedia.org/wiki/"+encodeURI(v).replace(/ /g, "+")
+							};
+						}
+					data[1].push({
+							"label": data[0],
+							"value": data[0]
+							});
 					response( data[1]);
 					}
 				});
@@ -83,51 +224,11 @@ $(function() {
 			$('#city').next('select').focus();
 			
 
-			
-			var tr=document.createElement("tr");
-			var td=document.createElement("td");
-			var select=document.createElement("select");
-			td.appendChild(select);
-			var predicates=[
-				{label:"keyword",uri:""},
-				{label:"author",uri:""},
-				{label:"location",uri:""}
-				];
-			for(i in predicates)
-				{
-				var option=document.createElement("option");
-				option.appendChild(document.createTextNode(predicates[i].label));
-				option.setAttribute("value",option);
-				select.appendChild(option);
-				}
-			tr.appendChild(td);
-			
-			td=document.createElement("td");
-			var anchor=document.createElement("a");
-			anchor.setAttribute("href","http://en.wikipedia.org/wiki/"+ui.item.label);
-			anchor.setAttribute("target","_blank");
-			anchor.appendChild(document.createTextNode(JSON.stringify(ui.item.label)));
-			td.appendChild(anchor);
-			tr.appendChild(td);
-			
-			td=document.createElement("td");
-			anchor=document.createElement("a");
-			/*anchor.onclick=function(evt)
-				{
-				alert("x"+JSON.stringify(evt.target));
-				}; */
-			anchor.setAttribute("href","#");
-			anchor.setAttribute("onclick","rmRow(this)");
-			
-			anchor.appendChild(document.createTextNode("Remove"));
-			td.appendChild(anchor);
-			tr.appendChild(td);
-			
-			tr.dataset.meta={
-				"select":select,
-				"value":ui.item.label
-				};
-			
+			var tr=createProperty(
+				ui.item.label,
+				ui.item.value
+				);
+	
 			document.getElementById("tbody").appendChild(tr);
 			makeXML();
 			},
@@ -148,13 +249,23 @@ function rmRow(a)
 	document.getElementById("tbody").removeChild(tr);
 	makeXML();
 	}
+window.addEventListener("load",function()
+	{
+	var input=document.getElementById("input")
+	input.addEventListener('keyup',function(){ makeXML();},false);
+	input.addEventListener('keydown',function(){ makeXML();},false);
+	input=document.getElementById("sellang");
+	input.addEventListener('change',function(){ makeXML();},false);
+	makeXML();
+	},false);
+
 </script>
 </head>
 <body>
 <div class="container">
  <div class="page-header">
       <h3>Quotes</h3>
-      <p>TODO</p>
+     <!-- TODO -->
       <!-- <p><a class="btn btn-primary btn-lg" role="button" href="#">More...</a> -->
 </div>
 <div class="row">
@@ -168,6 +279,13 @@ function rmRow(a)
 		<div>
 		<label for="input">Quote:</label>
 		<textarea id="input" style="width:100%;" rows="15"></textarea>
+		</div>
+		<div>
+		<label for="sellang">Lang:</label>
+		<select id="sellang">
+			<option value="en">en</option>
+			<option value="fr">fr</option>
+		</select>
 		</div>
 	</div>
 	
