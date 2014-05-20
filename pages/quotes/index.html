@@ -20,7 +20,7 @@
 .ui-autocomplete-loading {
 background: white url('http://jqueryui.com/resources/demos/autocomplete/images/ui-anim_basic_16x16.gif') right center no-repeat;
 }
-#city { width: 25em; }
+#wpkwd { width: 25em; }
 </style>
 
  <script>
@@ -49,6 +49,12 @@ function looksLikeUri(uri)
 	return uri.indexOf("http://")==0 ||  uri.indexOf("https://")==0  ||  uri.indexOf("urn:")==0;
 	}
 
+function getLanguage()
+	{
+	var sellang= document.getElementById("sellang");
+	return sellang.options[sellang.selectedIndex].value;
+	}
+
 function makeXML()
 	{
 	var doc= document.implementation.createDocument(RDF, 'rdf:RDF', null);
@@ -63,8 +69,8 @@ function makeXML()
 	Quote.appendChild( doc.createTextNode("\n\t\t"));
 	
 	var qtext= doc.createElement("q:quote");
-	var sellang= document.getElementById("sellang");
-	qtext.setAttribute("xml:lang",sellang.options[sellang.selectedIndex].value);
+
+	qtext.setAttribute("xml:lang",getLanguage());
 	qtext.appendChild( doc.createTextNode(document.getElementById("input").value) );
 	Quote.appendChild( qtext);
 	
@@ -95,6 +101,7 @@ function makeXML()
 			}
 		else
 			{
+			prop.setAttribute("xml:lang",getLanguage());
 			prop.appendChild( doc.createTextNode(uri));
 			}
 		Quote.appendChild( doc.createTextNode("\n\t\t"));
@@ -171,13 +178,13 @@ $(function() {
 		
 		}
 
-	$( "#city" ).autocomplete(
+	$( "#wpkwd" ).autocomplete(
 		{
 		source: function( request, response )
 			{
 			$.ajax(
 				{
-				url: "http://en.wikipedia.org/w/api.php",
+				url: "http://"+getLanguage()+".wikipedia.org/w/api.php",
 				dataType: "jsonp",
 				data:
 					{
@@ -200,11 +207,12 @@ $(function() {
 						var v=data[1][i];
 						data[1][i]={
 							"label": v,
-							"value":"http://en.wikipedia.org/wiki/"+encodeURI(v).replace(/ /g, "+")
+							"value":"http://"+getLanguage()+".wikipedia.org/wiki/"+encodeURI(v).replace(/ /g, "+"),
+							"icon":"https://upload.wikimedia.org/wikipedia/commons/c/c9/W_icon.png"
 							};
 						}
 					data[1].push({
-							"label": data[0],
+							"label": '"'+data[0]+'" (literal)',
 							"value": data[0]
 							});
 					response( data[1]);
@@ -221,7 +229,7 @@ $(function() {
 				}
 			//log( ui.item ?"Selected: " + ui.item.label : "Nothing selected, input was " + this.value);
 			//alert(ui.item.label);
-			$('#city').next('select').focus();
+			$('#wpkwd').next('select').focus();
 			
 
 			var tr=createProperty(
@@ -241,6 +249,7 @@ $(function() {
 			$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
 			}
 		});
+			
 	});
 
 function rmRow(a)
@@ -272,13 +281,13 @@ window.addEventListener("load",function()
 	<div class="col-sm-4 col-md-4">
 		<div>
 		
-		<label for="city">Test: </label> <input id="city" size="10"/>
+		<label for="wpkwd">Add: </label> <input id="wpkwd" size="10" placeholder="Search wikipedia"/>
 		<div class="ui-widget" style="margin-top:2em; font-family:Arial"></div>
 		
 		</div>
 		<div>
 		<label for="input">Quote:</label>
-		<textarea id="input" style="width:100%;" rows="15"></textarea>
+		<textarea id="input" style="width:100%;" rows="15" placeholder="Quote"></textarea>
 		</div>
 		<div>
 		<label for="sellang">Lang:</label>
