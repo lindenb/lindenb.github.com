@@ -308,8 +308,7 @@ window.addEventListener("load",function()
 <div class="container">
  <div class="page-header">
       <h3>Quotes</h3>
-     <!-- TODO -->
-      <!-- <p><a class="btn btn-primary btn-lg" role="button" href="#">More...</a> -->
+     <p>A tool to define semantic quotes using RDF/XML and wikipedia.</p>
 </div>
 <div class="row">
 	<div class="col-sm-4 col-md-4">
@@ -349,11 +348,12 @@ window.addEventListener("load",function()
 	</div>
 	<div class="col-sm-4 col-md-4">
 		<label for="xml">XML: </label>
-		<textarea id="xml" style="width:100%;" rows="15"></textarea>
+		<textarea id="xml" style="width:100%;" rows="15"></textarea><br/>
+		<a href="https://github.com/lindenb/quotes/edit/master/data/quotes.0001.rdf" target="_blank">Edit quotes</a>
 	</div>
 <!-- <div class="ui-widget"> -->
 </div>
-Bookmarklet: <a href="javascript:var%20q%3D(window.getSelection%3F%20window.getSelection().toString().trim()%3A(document.selection.createRange%3Fdocument.selection.createRange().txt.trim()%3A%22%22))%3Bwindow.location%3D(%22http%3A%2F%2Flindenb.github.io%2Fpages%2Fquotes%2Findex.html%3Fq%3D%22%2BencodeURIComponent(q)%2B%22%26u%3D%22%2BencodeURIComponent(location.href))%3B">Quote</a>
+Bookmarklet: <a href="javascript:var%20q%3D(window.getSelection%3F%20window.getSelection().toString().trim()%3A(document.selection.createRange%3Fdocument.selection.createRange().txt.trim()%3A%22%22))%3Bwindow.location%3D(%22http%3A%2F%2Flindenb.github.io%2Fpages%2Fquotes%2Findex.html%3Fq%3D%22%2BencodeURIComponent(q)%2B%22%26u%3D%22%2BencodeURIComponent(location.href))%3B">Quote</a>.<br/><a href="http://lindenb.github.io/">Pierre Lindenbaum</a> 2014.
 </div>
 
 </body>
