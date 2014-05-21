@@ -116,8 +116,9 @@ function makeXML()
 	removeAllChildren(document.getElementById("xml")).appendChild(document.createTextNode(serializer.serializeToString(doc)));
 	} 
  
-function createProperty(label,resource)
+function createProperty(label,resource,indexPredicate)
 	{
+	
 	var tr=document.createElement("tr");
 	
 	tr.setAttributeNS(RDF,"rdf:label",label);
@@ -133,6 +134,7 @@ function createProperty(label,resource)
 		var option=document.createElement("option");
 		option.appendChild(document.createTextNode(PREDICATES[i].label));
 		option.setAttribute("value",option);
+		if(i==indexPredicate) option.setAttribute("selected","true");
 		select.appendChild(option);
 		}
 	tr.appendChild(td);
@@ -165,6 +167,7 @@ function createProperty(label,resource)
 	td.appendChild(anchor);
 	tr.appendChild(td);
 	
+
 	
 	return tr;
 	} 
@@ -234,7 +237,8 @@ $(function() {
 
 			var tr=createProperty(
 				ui.item.label,
-				ui.item.value
+				ui.item.value,
+				-1
 				);
 	
 			document.getElementById("tbody").appendChild(tr);
@@ -265,7 +269,37 @@ window.addEventListener("load",function()
 	input.addEventListener('keydown',function(){ makeXML();},false);
 	input=document.getElementById("sellang");
 	input.addEventListener('change',function(){ makeXML();},false);
+	
+	
+	
+	if(location.search )
+		{
+		var argsArray =location.search.split(/[\\?&]/);
+		for(var i=0;i < argsArray.length;++i)
+			{
+			var eq=argsArray[i].indexOf("=");
+			if(eq==-1) continue;
+			
+			var argkey=argsArray[i].substr(0,eq);
+			var argval=decodeURIComponent(argsArray[i].substr(eq+1).replace(/\+/g,' '));
+			console.log(argkey+">"+argval);
+			if(argkey=="q")
+				{
+				document.getElementById("input").value=argval;
+				}
+			else if(argkey=="u" && looksLikeUri(argval))
+				{
+				
+				document.getElementById("tbody").appendChild(createProperty(argval,argval,3));
+				var back= document.getElementById("goback");
+				back.setAttribute("href",argval);
+				back.appendChild(document.createTextNode("Go back "+argval));
+				}
+			} 
+		}
 	makeXML();
+
+	
 	},false);
 
 </script>
@@ -311,6 +345,7 @@ window.addEventListener("load",function()
 		<tbody id="tbody">
 		</tbody>
 		</table>
+		<a id="goback"></a>
 	</div>
 	<div class="col-sm-4 col-md-4">
 		<label for="xml">XML: </label>
@@ -318,7 +353,7 @@ window.addEventListener("load",function()
 	</div>
 <!-- <div class="ui-widget"> -->
 </div>
-
+Bookmarklet: <a href="javascript:var%20q%3D(window.getSelection%3F%20window.getSelection().toString().trim()%3A(document.selection.createRange%3Fdocument.selection.createRange().txt.trim()%3A%22%22))%3Bwindow.location%3D(%22http%3A%2F%2Flindenb.github.io%2Fpages%2Fquotes%2Findex.html%3Fq%3D%22%2BencodeURIComponent(q)%2B%22%26u%3D%22%2BencodeURIComponent(location.href))%3B">Quote</a>
 </div>
 
 </body>
