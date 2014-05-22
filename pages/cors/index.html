@@ -1,0 +1,192 @@
+<html>
+<head>
+   <title>Bioinformatics services supporting CORS</title>
+   <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+   <link href="../../resources/css/lindenb.css" rel="stylesheet"></link>
+   <script src="../../resources/js/jquery/jquery-2.1.0.min.js"></script>
+   <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+<style>
+
+</style>
+<script>
+var targetIndex=-1;
+var TARGETS=[
+	{
+	"name":"Biomart",
+	"url":"http://www.biomart.org/biomart/martservice/result?query=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20Query%3E%0A%3CQuery%20%20virtualSchemaName%20%3D%20%22default%22%20formatter%20%3D%20%22TSV%22%20header%20%3D%20%220%22%20uniqueRows%20%3D%20%220%22%20count%20%3D%20%22%22%20datasetConfigVersion%20%3D%20%220.6%22%20%3E%0A%0A%20%20%20%20%20%20%20%20%3CDataset%20name%20%3D%20%22hsapiens_gene_ensembl%22%20interface%20%3D%20%22default%22%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CFilter%20name%20%3D%20%22chromosome_name%22%20value%20%3D%20%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CFilter%20name%20%3D%20%22with_illumina_humanwg_6_v3%22%20excluded%20%3D%20%220%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CAttribute%20name%20%3D%20%22ensembl_gene_id%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CAttribute%20name%20%3D%20%22ensembl_transcript_id%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FDataset%3E%0A%3C%2FQuery%3E"
+	},
+	{
+	"name":"Uniprot-jsonld",
+	"url":"http://www.uniprot.org/uniprot/P02763.jsonld"
+	},
+	{
+	"name":"Uniprot-xml",
+	"url":"http://www.uniprot.org/uniprot/P02763.xml"
+	},
+	{
+	"name":"NCBI (EINFO)",
+	"url":"http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi"
+	}
+	];
+
+
+function reportCORS(result)
+	{
+	var target= TARGETS[result.targetIndex];
+	
+
+	
+	var tr= document.createElement("tr");
+	tr.setAttribute("class","r"+(targetIndex%2));
+	var tbody=document.getElementById("tbody");
+	tbody.appendChild(tr);
+	
+	var td= document.createElement("td");
+	td.appendChild(document.createTextNode(target.name));
+	tr.appendChild(td);
+	
+	td= document.createElement("td");
+	var anchor=document.createElement("a");
+	anchor.setAttribute("href",target.url);
+	anchor.setAttribute("target","_blank");
+	anchor.setAttribute("title",target.url);
+	anchor.appendChild(document.createTextNode(target.url.length>25?target.url.substr(0,25)+"...":target.url));
+	td.appendChild(anchor);
+	tr.appendChild(td);
+	
+	td= document.createElement("td");
+	if(result.response)
+		{
+		var maxLength=50;
+		var c=document.createElement("code");
+		c.appendChild(document.createTextNode(result.response.length>maxLength?result.response.substr(0,maxLength)+"...":result.response));
+		td.appendChild(c);
+		}
+	tr.appendChild(td);
+	
+	td= document.createElement("td");
+	if(result.statusCss) td.setAttribute("style",result.statusCss);
+	if(result.status) td.appendChild(document.createTextNode(result.status));
+	tr.appendChild(td);
+	
+	}
+
+// Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
+
+
+// Make the actual CORS request.
+function makeCorsRequest()
+  {
+  targetIndex++;
+  if(targetIndex >= TARGETS.length ) return;
+  var nowIndex=targetIndex;
+  
+  var target=TARGETS[targetIndex];
+  // All HTML5 Rocks properties support CORS.
+	
+
+  var xhr = createCORSRequest('GET', target.url);
+  if (!xhr)
+  	{
+    	reportCORS(
+    		{
+    		"targetIndex":nowIndex,
+    		statusCss:"color:red",
+    		status:"CORS not supported"
+    		});
+    	return;
+  	}
+
+  // Response handlers.
+  xhr.onload = function() {
+    var text = xhr.responseText;
+    reportCORS(
+    	{
+    	"targetIndex":nowIndex,
+    	response: xhr.responseText,
+	statusCss:"color:green",
+	status:"OK"
+	}
+    	);
+  };
+
+  xhr.onerror = function() {
+  	reportCORS(
+    		{
+    		"targetIndex":nowIndex,
+    		statusCss:"color:red",
+    		status:"error making the request"
+    		});
+  };
+  try
+  	{	
+	xhr.send();
+	}
+  catch(ex)
+  	{
+  	reportCORS(
+    		{
+    		"targetIndex":nowIndex,
+    		statusCss:"color:red",
+    		status:ex
+    		});
+  	}
+  setTimeout(makeCorsRequest,50);
+}
+window.addEventListener("load",function()
+	{
+	makeCorsRequest();
+	},false);
+</script>
+</head>
+<body>
+<div class="container">
+<div class="page-header">
+      <h1>Bioinformatics Services supporting Cross-origin resource sharing</h1>
+      <p><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-origin resource sharing/CORS</a>  is a mechanism that allows many resources (e.g. fonts, JavaScript, etc.) on a web page to be requested from another domain outside of the domain the resource originated from.</p>
+      <!-- <p><a class="btn btn-primary btn-lg" role="button" href="#">More...</a> -->
+</div>
+<div class="row">
+<table style="" width="100%">
+<thead>
+	<tr>
+		<th>Name</th>
+		<th>URL</th>
+		<th>Response</th>
+		<th>Status</th>
+	</tr>
+</thead>
+<tbody id="tbody">
+</tbody>
+</table>
+</div>
+
+
+
+<div class="row">
+<hr/>
+<div>Author: <a href="http://lindenb.github.io/">Pierre Lindenbaum PhD</a>.</div>
+</div>
+
+
+
+</div>
+</body>
+</html>
+
