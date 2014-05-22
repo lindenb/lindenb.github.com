@@ -29,7 +29,11 @@ var TARGETS=[
 	},
 	{
 	"name":"Wikipedia (OpenSearch)",
-	"url":"http://en.wikipedia.org/w/api.php?action=opensearch&search=Bioinformatics"
+	"url":"http://en.wikipedia.org/w/api.php?action=opensearch&search=Bioinformatics",
+	"xhrFields":{
+		"Access-Control-Allow-Credentials": "true",
+		"Access-Control-Allow-Origin": (window.location.hostname?window.location.hostname:"*")
+		}
 	},
 	{
 	"name":"NCBI BLAST",
@@ -46,6 +50,10 @@ var TARGETS=[
 	{
 	"name":"UCSC Download Area",
 	"url":"http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/knownGene.sql"
+	},
+	{
+	"name":"TogoWS",
+	"url":"http://togows.dbcls.jp/entry/genes/eco:b0002"
 	}
 	];
 
@@ -132,9 +140,16 @@ function makeCorsRequest()
     		});
     	return;
   	}
-
+  if(target.xhrFields)
+  	{
+	for(var xhrField in target.xhrFields)
+		{
+		console.log(target.xhrFields[xhrField]);
+		xhr.setRequestHeader(xhrField,target.xhrFields[xhrField]);	
+		}
+	}
   // Response handlers.
-  xhr.onload = function() {
+    xhr.onload = function() {
     var text = xhr.responseText;
     reportCORS(
     	{
@@ -151,7 +166,7 @@ function makeCorsRequest()
     		{
     		"targetIndex":nowIndex,
     		statusCss:"color:red",
-    		status:"error making the request"
+    		status:"FAIL"
     		});
   };
   try
@@ -167,7 +182,7 @@ function makeCorsRequest()
     		status:ex
     		});
   	}
-  setTimeout(makeCorsRequest,50);
+  setTimeout(makeCorsRequest,200);
 }
 window.addEventListener("load",function()
 	{
