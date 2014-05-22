@@ -12,6 +12,10 @@
 var targetIndex=-1;
 var TARGETS=[
 	{
+	"name":"Biogrid",
+	"url":"http://webservice.thebiogrid.org/interactions/"
+	},
+	{
 	"name":"Biomart",
 	"url":"http://www.biomart.org/biomart/martservice/result?query=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20Query%3E%0A%3CQuery%20%20virtualSchemaName%20%3D%20%22default%22%20formatter%20%3D%20%22TSV%22%20header%20%3D%20%220%22%20uniqueRows%20%3D%20%220%22%20count%20%3D%20%22%22%20datasetConfigVersion%20%3D%20%220.6%22%20%3E%0A%0A%20%20%20%20%20%20%20%20%3CDataset%20name%20%3D%20%22hsapiens_gene_ensembl%22%20interface%20%3D%20%22default%22%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CFilter%20name%20%3D%20%22chromosome_name%22%20value%20%3D%20%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CFilter%20name%20%3D%20%22with_illumina_humanwg_6_v3%22%20excluded%20%3D%20%220%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CAttribute%20name%20%3D%20%22ensembl_gene_id%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CAttribute%20name%20%3D%20%22ensembl_transcript_id%22%20%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FDataset%3E%0A%3C%2FQuery%3E"
 	},
