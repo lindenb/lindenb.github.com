@@ -469,6 +469,7 @@ var PaintSVG={
 				}
 			}
 		y+=this.distBetweenFeatures;
+		y+=30;
 		svg.setAttribute("height",y);
 		
 		
@@ -499,3 +500,24 @@ var PaintSVG={
 		
 		}
 	};
+
+
+window.addEventListener("load",function()
+	{
+	var i,prefix="acn=",argsArray;
+	if(! location.search ) return;
+	argsArray =location.search.split(/[\\?&]/);
+	for(i=0;i < argsArray.length;++i)
+		{
+		
+		if(argsArray[i].indexOf(prefix)!=0) continue;
+		var pmid=argsArray[i].substr(prefix.length);
+		var input=document.getElementById("acn");
+		input.value=pmid;
+		PaintSVG.load();
+		break;
+		}   
+	
+	},false);
+
+
