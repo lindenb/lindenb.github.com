@@ -212,7 +212,6 @@ var PaintSVG={
 		},
 	paint:function(do_export)
 		{
-		
 		if(this.entry==null)
 		 	{
 		 	this.load();	
@@ -495,7 +494,8 @@ var PaintSVG={
 	
 		if(do_export)
 			{
-			location.href="data:image/svg;base64,"+btoa(new XMLSerializer().serializeToString(svg));
+			window.location.href="data:image/svg;base64,"+btoa(new XMLSerializer().serializeToString(svg));
 			}
+		
 		}
 	};

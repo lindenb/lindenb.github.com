@@ -30,7 +30,7 @@
 	 	<label for="acn">Enter an Uniprot identifier:</label>
 	 	<input id="acn" name="acn" type="text" placeholder="Uniprot acn e.g: Q04721" value=""/>
 		<button onclick="PaintSVG.load()"  class="btn btn-primary ">Fetch</button>
-		<button id="downloadsvg" name="downloadsvg" onchange="PaintSVG.paint(true)" class="btn">Export</button>
+		<button id="downloadsvg" name="downloadsvg" onclick="PaintSVG.paint(true);" class="btn">Export</button>
 		<label for="svgwidth">Width:</label>
 	 	<input id="svgwidth" name="svgwidth" type="number" placeholder="width" value="1000" onchange="PaintSVG.paint(false)"/>
 	 	
