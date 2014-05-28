@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	>
+<head>
+
+   <title>Uniprot &#8594; SVG</title>
+   <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+   <link href="../../resources/css/lindenb.css" rel="stylesheet"></link>
+   <script src="../../resources/js/jquery/jquery-2.1.0.min.js"></script>
+   <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+   <script src="../../resources/js/lindenb/xdom.js"></script>
+   <script type="text/javascript" src="paintsvg.js"></script>
+
+
+
+</head>
+<body>
+<div class="container">
+
+<div class="page-header">
+      <h1>Uniprot &#8594; SVG</h1>
+      <p>This interface was developped to help <a title="je sers la science, c'est ma joie." href="https://twitter.com/SolenaLS">@SolenaLS</a> drawing her figures. It fetches an entry from <a href="http://www.uniprot.org">Uniprot</a> and creates a <b>SVG</b> image of the protein. The image can be modified using <a href="http://www.inkscape.org">Inkscape</a> </p>
+      <!-- <p><a class="btn btn-primary btn-lg" role="button" href="#">More...</a> -->
+</div>
+
+
+<div class="row">
+	 	<label for="acn">Enter an Uniprot identifier:</label>
+	 	<input id="acn" name="acn" type="text" placeholder="Uniprot acn e.g: Q04721" value=""/>
+		<button onclick="PaintSVG.load()"  class="btn btn-primary ">Fetch</button>
+		<button id="downloadsvg" name="downloadsvg" onchange="PaintSVG.paint(true)" class="btn">Export</button>
+		<label for="svgwidth">Width:</label>
+	 	<input id="svgwidth" name="svgwidth" type="number" placeholder="width" value="1000" onchange="PaintSVG.paint(false)"/>
+	 	
+	 	<br/>
+
+	 	
+	 	<input id="dicardpotential" name="dicardpotential" type="checkbox" onchange="PaintSVG.paint(false)" />
+	 	<label for="dicardpotential">Discard 'potentials'</label>
+	 	
+	 	<input id="dicardbysimilarity" name="dicardbysimilarity" type="checkbox" onchange="PaintSVG.paint(false)" />
+	 	<label for="dicardbysimilarity">Discard 'by similarity'</label>
+	 	
+		<input id="collapse" name="collapse" type="checkbox"  onchange="PaintSVG.paint(false)"/>
+	 	<label for="collapse">Collapse</label>
+	 	
+	 	<input id="noseqconflict" name="noseqconflict" type="checkbox"  onchange="PaintSVG.paint(false)"/>
+	 	<label for="noseqconflict">Discard 'sequence conflict'</label>
+	 	
+	 	<input id="hidelabels" name="hidelabels" type="checkbox"  onchange="PaintSVG.paint(false)"/>
+	 	<label for="hidelabels">Hide labels</label>
+	 	
+	 	<input id="hidegrid" name="hidegrid" type="checkbox"  onchange="PaintSVG.paint(false)"/>
+	 	<label for="hidegrid">Hide grid</label>
+	 	
+	 	
+
+	 	
+	 	<br/>
+	 	<label for="variants">Variants:</label><br/>
+	 	<textarea id="variants" name="variants"
+	 		placeholder="4 columns, spaces/tab delimited [Label,position, count(case),count(ctrl)]" 
+	 		onchange="PaintSVG.paint(false)" style="width:100%;" rows="5"></textarea>
+	 	
+	 	<hr/>
+</div>
+
+
+
+<div class="text-center">
+<div id="output"/>
+</div>
+
+
+
+<div class="row">
+	<div >
+<div>Author: <a href="http://lindenb.github.io/">Pierre Lindenbaum PhD</a>. Powered with <a href="http://uniprot.org">uniprot</a></div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
