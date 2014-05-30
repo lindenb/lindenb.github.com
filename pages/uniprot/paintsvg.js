@@ -251,7 +251,7 @@ var PaintSVG={
 			};
 		
 		var svg=document.createElementNS(SVG,"svg");
-		svg.setAttribute("width",this.screenWidth);
+		svg.setAttribute("width",this.screenWidth+100);
 		svg.setAttribute("height",100);
 		svg.setAttribute("version","1.1");
 		svg.setAttribute("style","font-size:"+this.fontSize+"px");
@@ -326,7 +326,7 @@ var PaintSVG={
 				var var_color=(columns[2]!="0" && columns[3]!="0"?"green":(j==2?"red":"blue"));
 				var g_var=document.createElementNS(SVG,"g");
 				g_var.setAttribute("transform","translate("+x1+",0)");
-				g_var.setAttribute("style","stroke-width:"+(count>3?3:1)+";stroke:"+var_color+";fill:"+var_color);
+				g_var.setAttribute("style","stroke-width:1px;stroke:"+var_color+";fill:"+var_color);
 				var g_parent=(j==2?G_var_case:G_var_ctrl);
 				//
 				
