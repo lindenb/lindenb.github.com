@@ -8,6 +8,10 @@ var     pubmedwp= {
 	predicate_choices:[
 		{"label":"","value":"","template":""},
 			{
+			"value":"mutations_associated_to",
+			"template": "Mutations in [[__SUBJECT__|__SUBJECT__]] are associated to {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			},
+			{
 			"value":"substrate_for",
 			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] was found to be a [[Substrate_(biochemistry)|substrate]] for {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},

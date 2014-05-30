@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+   <title>Build Ontology Wikipedia</title>
+   <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+   <link href="../../resources/css/lindenb.css" rel="stylesheet"></link>
+   <script src="../../resources/js/jquery/jquery-2.1.0.min.js"></script>
+   <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="buildontologywp.js"></script>
+
+
+</head>
+
+<body>
+<div class="container">
+
+<div class="page-header">
+      <h1>Build Ontology Wikipedia</h1>
+      <p>A tool to create an RDFS ontology from <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> categories.</p>
+      <!-- <p><a class="btn btn-primary btn-lg" role="button" href="#">More...</a> -->
+</div>
+
+
+<div>
+
+<div class="row">
+<div id="main"/>
+</div>
+
+<div class="row">
+<div>
+Author: <a href="https://github.com/lindenb/">Pierre Lindenbaum PhD</a>.
+</div>
+</div>
+
+<div style="display: none;">
+<div id="startup">
+<label>Enter root Category</label>
+<input value="Category:Science" placeholder="Category:"/>
+<button onclick="OntBuilder.execute()">OK</button>
+</div>
+</div>
+
+</div>
+</body>
+</html>
