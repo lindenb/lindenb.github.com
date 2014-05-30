@@ -133,7 +133,7 @@ var PaintSVG={
 	entry:null,
 	featureHeight:20,
 	distBetweenFeatures:5,
-	screenWidth:100,
+	_screenWidth:null,
 	fontSize:10,
 	variantsHeight:100,
 	discardBySimilarity:false,
@@ -203,12 +203,17 @@ var PaintSVG={
 		if(this.discardStatusIsPotential && "potential"==feat.getStatus()) return false;
 		if(this.discardSeqConflict && "sequence conflict"==feat.getType()) return false;
 		if(this.discardSeqConflict && "sequence variant"==feat.getType()) return false;
+		if(this.discardSeqConflict && "modified residue"==feat.getType()) return false;
 		if(this.discardBySimilarity && "by similarity"==feat.getStatus()) return false;
 		return true;
 		},
+	getScreenWidth:function()
+		{
+		return this._screenWidth;
+		},
 	convertAAToScreen:function(pos)
 		{
-		return (pos/(1.0*this.entry.length()))*this.screenWidth;
+		return (pos/(1.0*this.entry.length()))*this.getScreenWidth();
 		},
 	paint:function(do_export)
 		{
@@ -219,14 +224,25 @@ var PaintSVG={
 		 	}
 		
 
-		this.screenWidth=parseInt(document.getElementById("svgwidth").value);
-		if(this.screenWidth < 100) this.screenWidth=100;
+		this._screenWidth=null;
+		var svgscale=document.getElementById("svgscale").value.trim();
+		if(svgscale.length > 0)
+			{
+			try {this._screenWidth=parseFloat(svgscale)*this.entry.length();} catch(err) {console.log(err);this._screenWidth=null;}
+			}
+		if(this._screenWidth==null)
+			{
+			this._screenWidth=parseInt(document.getElementById("svgwidth").value.trim());
+			if(this._screenWidth < 100) this._screenWidth=100;
+			}
+		console.log(this.getScreenWidth());
+
 		
 		this.collapse=document.getElementById("collapse").checked;
 		this.discardStatusIsPotential=document.getElementById("dicardpotential").checked;
 		this.discardBySimilarity=document.getElementById("dicardbysimilarity").checked;
 		this.discardSeqConflict=document.getElementById("noseqconflict").checked;	
-	
+		
 		var hidelabels=document.getElementById("hidelabels").checked;	
 	
 		//draw longest items first
@@ -251,7 +267,7 @@ var PaintSVG={
 			};
 		
 		var svg=document.createElementNS(SVG,"svg");
-		svg.setAttribute("width",this.screenWidth+100);
+		svg.setAttribute("width",this.getScreenWidth()+100);
 		svg.setAttribute("height",100);
 		svg.setAttribute("version","1.1");
 		svg.setAttribute("style","font-size:"+this.fontSize+"px");
@@ -381,7 +397,7 @@ var PaintSVG={
 		G2.appendChild(E2);
 		E2.setAttribute("x","0");
 		E2.setAttribute("y",y_protein);
-		E2.setAttribute("width",this.screenWidth);
+		E2.setAttribute("width",this.getScreenWidth());
 		E2.setAttribute("height",this.featureHeight);
 		E2.setAttribute("style","fill:url(#grad0);stroke:black;");
 		y+=this.featureHeight;
@@ -441,12 +457,12 @@ var PaintSVG={
 				var text=document.createElementNS(SVG,"text");
 				g.appendChild(text);
 				text.setAttribute("y",y_feature+this.featureHeight-this.fontSize/2.0);
-				if(x2 <  this.screenWidth*0.5 )
+				if(x2 <  this.getScreenWidth()*0.5 )
 					{
 					text.setAttribute("text-anchor","start");
 					text.setAttribute("x",x2+10);
 					}
-				else if(x1 >= this.screenWidth*0.5 )
+				else if(x1 >= this.getScreenWidth()*0.5 )
 					{
 					text.setAttribute("text-anchor","end");
 					text.setAttribute("x",x1-5);
@@ -458,7 +474,12 @@ var PaintSVG={
 					text.setAttribute("x",(x2+x1)/2.0);
 					}
 
-				text.appendChild(document.createTextNode("("+(feat.getStart()+1)+"-"+(feat.getEnd())+") "+feat.getLabel()));
+				text.appendChild(document.createTextNode(
+					"("+
+					(feat.getStart()+1)+
+					(feat.getStart()+1==feat.getEnd()?"":"-"+feat.getEnd())+") "+
+					feat.getLabel())
+					);
 				}
 			
 			if(!this.collapse)

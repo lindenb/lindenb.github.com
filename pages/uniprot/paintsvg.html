@@ -33,7 +33,8 @@
 		<button id="downloadsvg" name="downloadsvg" onclick="PaintSVG.paint(true);" class="btn">Export</button>
 		<label for="svgwidth">Width:</label>
 	 	<input id="svgwidth" name="svgwidth" type="number" placeholder="width" value="1000" onchange="PaintSVG.paint(false)"/>
-	 	
+		<label for="svgscale" title="use the length of the protein instead of an arbitrary width. Allows multiple SVG to be on scale."> or scale protein length </label>
+	 	<input id="svgscale" name="svgscale" placeholder="scale protein"  size="3" value="" onchange="PaintSVG.paint(false)"/>
 	 	<br/>
 
 	 	
