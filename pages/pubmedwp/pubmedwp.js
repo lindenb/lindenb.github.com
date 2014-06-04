@@ -9,7 +9,7 @@ var     pubmedwp= {
 		{"label":"","value":"","template":""},
 			{
 			"value":"mutations_associated_to",
-			"template": "Mutations in [[__SUBJECT__|__SUBJECT__]] are associated to {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "== Clinical significance ==\nMutations in [[__SUBJECT__|__SUBJECT__]] are associated to {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"substrate_for",
@@ -21,15 +21,15 @@ var     pubmedwp= {
 			},
 			{
 			"value":"decrease_associated with disease",
-			"template": "Patients who lack [[__SUBJECT__|__SUBJECT__]] have {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "= Clinical significance ==\nPatients who lack [[__SUBJECT__|__SUBJECT__]] have {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"genetic_defect_results_in_disease",
-			"template": "Mutations in [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "= Clinical significance ==\nMutations in [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"involved_in_development_of",
-			"template": "The protein encoded by [[__SUBJECT__|__SUBJECT__]] plays a role in [[Developmental_biology|development] of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "= Clinical significance ==\nThe protein encoded by [[__SUBJECT__|__SUBJECT__]] plays a role in [[Developmental_biology|development] of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"is_bound_by",
@@ -37,15 +37,15 @@ var     pubmedwp= {
 			},
 			{
 			"value":"might_be_useful_for_treating",
-			"template": "[[__SUBJECT__|__SUBJECT__]] could be used to develop a treatment for {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "= Clinical significance ==\n[[__SUBJECT__|__SUBJECT__]] could be used to develop a treatment for {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"mutation_results_in",
-			"template": "Mutations in  [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "= Clinical significance ==\nMutations in  [[__SUBJECT__|__SUBJECT__]] cause {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"overexpression_results_in",
-			"template": "Mutations causing  [[__SUBJECT__|__SUBJECT__]] to be [[gene expression|overexpressed]] are one cause of  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "= Clinical significance ==\nMutations causing  [[__SUBJECT__|__SUBJECT__]] to be [[gene expression|overexpressed]] are one cause of  {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			},
 			{
 			"value":"phosphorylated_by",
@@ -65,7 +65,7 @@ var     pubmedwp= {
 			},
 			{
 			"value":"upregulated_in_relation_to_cancer",
-			"template": " [[gene expression|Overexpression]] of [[__SUBJECT__|__SUBJECT__]] appears to be important in the development of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
+			"template": "= Clinical significance ==\n[[gene expression|Overexpression]] of [[__SUBJECT__|__SUBJECT__]] appears to be important in the development of {{SWL|type=__SWLTYPE__|target=__OBJECT__|label=__OBJECT__}}.<ref>{{Cite pmid|__PMID__}}</ref>"
 			}
 			
 		]
