@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
+<meta content="utf-8" http-equiv="encoding"></meta>
+   <title></title>
+   <script type="text/javascript" src="../../resources/js/lindenb/rectangle.js"></script>
+   <script type="text/javascript" src="../../resources/js/lindenb/treemap.js"></script>
+   <script type="text/javascript" src="../../resources/js/lindenb/hershey.js"></script>
+<script type="text/javascript" >
+
+var SVG="http://www.w3.org/2000/svg";
+var XLINK="http://www.w3.org/1999/xlink";
+var hershey=new Hershey();
+
+function TreePackItem()
+	{
+	this.weight=1.0;
+	this.label="";
+	this.bounds=new Rectangle(0,0,0,0);
+	}
+
+TreePackItem.prototype.setBounds=function(bounds)
+	{
+	this.bounds=bounds;
+	return this;
+	};
+
+TreePackItem.prototype.getBounds=function()
+	{
+	return this.bounds;
+	};
+
+TreePackItem.prototype.getWeight=function()
+	{
+	return this.weight;
+	};
+
+TreePackItem.prototype.toSVG=function()
+	{
+	var g2=document.createElementNS(SVG,"g");
+	g2.setAttribute("title",this.weight);
+	
+
+	var rec=document.createElementNS(SVG,"rect");
+	g2.appendChild(rec);
+	rec.setAttribute("x",this.bounds.x);
+	rec.setAttribute("y",this.bounds.y);
+	rec.setAttribute("width",this.bounds.width);
+	rec.setAttribute("height",this.bounds.height);
+	rec.setAttribute("style","stroke:white;fill:lightgray;");
+	
+	var path=document.createElementNS(SVG,"path");
+	var insets=this.bounds.scaled(0.9);
+	path.setAttribute("style","stroke:black;fill:none;");
+	path.setAttribute("d",hershey.svgPath(""+this.weight,insets.x,insets.y,insets.width,insets.height));
+	g2.appendChild(path);
+	
+	return g2;
+	}
+
+var MakeTreeMap=
+	{
+	randomItems:function()
+		{
+		var items=[];
+		for(var i=0;i< 100;++i)
+			{
+			var item=new TreePackItem();
+			item.weight=(i+1);
+			items.push(item);
+			}
+		return items;
+		},
+	layout:function(generateItemsFunction)	
+		{
+		var items=generateItemsFunction();
+		var drawingArea=new Rectangle(0,0,800,800);
+		var packer=new TreePacker();
+		packer.layout(items,drawingArea);
+	
+		var svg=document.createElementNS(SVG,"svg");
+			svg.setAttribute("width",drawingArea.width);
+			svg.setAttribute("height",drawingArea.height);
+			svg.setAttribute("version","1.1");
+		var G1=document.createElementNS(SVG,"g");
+		svg.appendChild(G1);
+		for(var i=0;i< 100;++i)
+			{
+			var item=items[i];
+			G1.appendChild(item.toSVG());
+			}
+	
+	
+		var frame= document.createElementNS(SVG,"rect");
+			frame.setAttribute("x",0);
+			frame.setAttribute("y",0);
+			frame.setAttribute("width",drawingArea.width);
+			frame.setAttribute("height",drawingArea.height);
+			frame.setAttribute("style","stroke:black;fill:none;");
+		svg.appendChild(frame);
+	
+	
+	
+		var outputE=document.getElementById("output");
+		while(outputE.firstChild) outputE.removeChild(outputE.firstChild);
+		outputE.appendChild(svg);
+		console.log("Done");
+		}
+	};
+
+window.addEventListener("load",function()
+	{
+	MakeTreeMap.layout(MakeTreeMap.randomItems);
+	},false);
+</script>
+</head>
+<body>
+<div id="output"/>
+</body>
+</html>
