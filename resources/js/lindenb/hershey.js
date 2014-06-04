@@ -176,10 +176,27 @@ Hershey.prototype.paint=function(ctx,s,x,y,width,height)
 	
 	};
 
-Hershey.prototype.svgPath=function(s,x,y,width,height)
+Hershey.prototype.svgPath=function()
 		{
+		var s=arguments[0];
 		var sw="";
-
+		var x,y,width,height;
+		if(arguments.length==2)
+			{
+			var rec=arguments[1];
+			x=rec.x;
+			y=rec.y;
+			width=rec.width;
+			height=rec.height;
+			}
+		else
+			{
+			x=arguments[2];
+			y=arguments[3];
+			width=arguments[4];
+			height=arguments[5];
+			}
+		
 		if(s.length==0 || width==0 || height==0) return "";
 		
 		var dx=width/s.length;

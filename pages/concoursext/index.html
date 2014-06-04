@@ -3,7 +3,8 @@
 <head>
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
 <meta content="utf-8" http-equiv="encoding"></meta>
-   <title></title>
+   <title>Concours CNRS 2014</title>
+   <script type="text/javascript" src="00cnrs2014.js"></script>
    <script type="text/javascript" src="../../resources/js/lindenb/rectangle.js"></script>
    <script type="text/javascript" src="../../resources/js/lindenb/treemap.js"></script>
    <script type="text/javascript" src="../../resources/js/lindenb/hershey.js"></script>
@@ -15,9 +16,11 @@ var hershey=new Hershey();
 
 function TreePackItem()
 	{
-	this.weight=1.0;
+	this.weight=null;
 	this.label="";
 	this.bounds=new Rectangle(0,0,0,0);
+	this.items=[];
+	this.parent=null;
 	}
 
 TreePackItem.prototype.setBounds=function(bounds)
@@ -33,13 +36,28 @@ TreePackItem.prototype.getBounds=function()
 
 TreePackItem.prototype.getWeight=function()
 	{
+	if(this.weight==null)
+		{
+		if(this.items.length==0)
+			{
+			this.weight=1.0;
+			}
+		else
+			{
+			this.weight=1.0;
+			for(var i=0;i < this.items.length;++i)
+				{
+				this.weight += this.items[i].getWeight();
+				}
+			}
+		}
 	return this.weight;
 	};
 
 TreePackItem.prototype.toSVG=function()
 	{
 	var g2=document.createElementNS(SVG,"g");
-	g2.setAttribute("title",this.weight);
+	g2.setAttribute("title",this.label+" N="+this.weight);
 	
 
 	var rec=document.createElementNS(SVG,"rect");
@@ -48,44 +66,145 @@ TreePackItem.prototype.toSVG=function()
 	rec.setAttribute("y",this.bounds.y);
 	rec.setAttribute("width",this.bounds.width);
 	rec.setAttribute("height",this.bounds.height);
-	rec.setAttribute("style","stroke:white;fill:lightgray;");
+	rec.setAttribute("style",this.parent==null?"stroke:lightgray;fill:white;":"stroke:white;fill:lightgray;");
 	
 	var path=document.createElementNS(SVG,"path");
-	var insets=this.bounds.scaled(0.9);
-	path.setAttribute("style","stroke:black;fill:none;");
-	path.setAttribute("d",hershey.svgPath(""+this.weight,insets.x,insets.y,insets.width,insets.height));
+	
+	path.setAttribute("style","stroke:blue;fill:none;");
+	path.setAttribute("d",hershey.svgPath(this.label,this.getLabelRect()));
 	g2.appendChild(path);
 	
+	if(this.items.length!=0)
+		{
+		var g3=document.createElementNS(SVG,"g");
+		g2.appendChild(g3);
+		for(var i=0;i < this.items.length;++i)
+			{
+			g2.appendChild(this.items[i].toSVG());
+			}
+		}
+	
 	return g2;
-	}
+	};
+
+TreePackItem.prototype.getLabelRect=function()
+	{
+	var rec=this.bounds.scaled(0.95);
+	if(this.items.length!=0)
+		{
+		rec.height*=0.1;
+		}
+	while(rec.height>20)  rec=rec.scaledY(0.95);
+	return rec;
+	};
+
+TreePackItem.prototype.getFrameRect=function()
+	{
+	var frame=  this.bounds.scaled(0.95);
+	if(this.items.length==0) return frame;
+	var lblRec=this.getLabelRect();
+	frame.height-=lblRec.height+1;
+	frame.y=lblRec.getMaxY()+1;
+	return frame;
+	};
+
+
+TreePackItem.prototype.layout=function(packer)	
+	{
+	if(this.items==null || this.items.length==0) return;
+	packer.layout(this.items,this.getFrameRect());
+	};
 
 var MakeTreeMap=
 	{
-	randomItems:function()
+	groupByConcours:function()
+		{
+		var group={};
+		for(var i=0; i < concours2014.length;++i)
+			{
+			var concours=concours2014[i];
+			group[concours.number]=concours;
+			}
+		return MakeTreeMap.hashToArray(group);
+		},
+	hashToArray:function(hash)
 		{
 		var items=[];
-		for(var i=0;i< 100;++i)
-			{
-			var item=new TreePackItem();
-			item.weight=(i+1);
-			items.push(item);
-			}
+		for(var k in hash) items.push(hash[k]);
 		return items;
+		},
+	groupData:function(list,key1,key2)
+		{
+		var group={};
+		for(var i=0;i < list.length;++i)
+			{
+			var concours=list[i];
+			var v1=concours[key1];
+			var item1;
+			if(!(v1 in group))
+				{
+				item1=new TreePackItem();
+				item1.weight=1;
+				item1.label=v1;
+				group[v1]=item1;
+				if( key2 != null) item1.items={};
+				}
+			else	
+				{
+				item1=group[v1];
+				item1.weight++;
+				}
+			if(key2 != null )
+				{
+				var v2=concours[key2];
+				
+				var item2;
+				if(!(v2 in item1.items))
+					{
+					item2=new TreePackItem();
+					item2.parent=item2;
+					item2.weight=1;
+					item2.label=v2;
+					item1.items[v2]=item2;
+					}
+				else	
+					{
+					item2=item1.items[v2];
+					item2.weight++;
+					}
+				
+				}
+			}
+		if(key2 != null )
+			{
+			for(var k in group)
+				{
+				console.log(k);
+				group[k].items=MakeTreeMap.hashToArray(group[k].items);
+				}
+			}
+		return MakeTreeMap.hashToArray(group);
 		},
 	layout:function(generateItemsFunction)	
 		{
 		var items=generateItemsFunction();
 		var drawingArea=new Rectangle(0,0,800,800);
 		var packer=new TreePacker();
+		console.log("layout...");
 		packer.layout(items,drawingArea);
-	
+		//align sub-items
+		for(var i=0;i < items.length;++i)
+			{
+			items[i].layout(packer);
+			}
+		
 		var svg=document.createElementNS(SVG,"svg");
 			svg.setAttribute("width",drawingArea.width);
 			svg.setAttribute("height",drawingArea.height);
 			svg.setAttribute("version","1.1");
 		var G1=document.createElementNS(SVG,"g");
 		svg.appendChild(G1);
-		for(var i=0;i< 100;++i)
+		for(var i=0;i < items.length;++i)
 			{
 			var item=items[i];
 			G1.appendChild(item.toSVG());
@@ -106,16 +225,71 @@ var MakeTreeMap=
 		while(outputE.firstChild) outputE.removeChild(outputE.firstChild);
 		outputE.appendChild(svg);
 		console.log("Done");
+		},
+	layoutSectionEmploi:function()
+		{
+		return MakeTreeMap.groupData(MakeTreeMap.groupByConcours(),"section","emploi");
+		},
+	layoutEmploiSection:function()
+		{
+		return MakeTreeMap.groupData(MakeTreeMap.groupByConcours(),"emploi","section");
+		},
+	layoutEmploi:function()
+		{
+		return MakeTreeMap.groupData(MakeTreeMap.groupByConcours(),"emploi",null);
+		},
+	layoutSection:function()
+		{
+		return MakeTreeMap.groupData(MakeTreeMap.groupByConcours(),"section",null);
+		},
+	layoutProfil:function()
+		{
+		return MakeTreeMap.groupData(MakeTreeMap.groupByConcours(),"profil",null);
+		},
+	layoutTown:function()
+		{
+		return MakeTreeMap.groupData(concours2014,"town",null);
+		},
+	layoutTownEmploi:function()
+		{
+		return MakeTreeMap.groupData(concours2014,"town","emploi");
 		}
 	};
 
 window.addEventListener("load",function()
 	{
-	MakeTreeMap.layout(MakeTreeMap.randomItems);
+	MakeTreeMap.layout(MakeTreeMap.layoutSectionEmploi);
+	var select=document.getElementById("sel");
+	select.addEventListener('change',function(){
+		switch(select.selectedIndex)
+			{
+			case 0: MakeTreeMap.layout(MakeTreeMap.layoutSectionEmploi);break;
+			case 1: MakeTreeMap.layout(MakeTreeMap.layoutEmploiSection);break;
+			case 2: MakeTreeMap.layout(MakeTreeMap.layoutTown);break;
+			case 3: MakeTreeMap.layout(MakeTreeMap.layoutEmploi);break;
+			case 4: MakeTreeMap.layout(MakeTreeMap.layoutSection);break;
+			case 5: MakeTreeMap.layout(MakeTreeMap.layoutProfil);break;
+			break;
+			}
+		},false);
 	},false);
 </script>
 </head>
 <body>
-<div id="output"/>
+<h1 style="text-align:center;">Concours externes CNRS 2014</h1>
+<div style="text-align:center;">
+ <select id="sel">
+ 	<option>Section/Emploi</option>
+ 	<option>Emploi/Section</option>
+ 	<option>Affectations</option>
+ 	<option>Emploi</option>
+ 	<option>Section</option>
+ 	<option>Profil</option>
+ </select>
+</div>
+<hr/>
+<div style="text-align:center;" id="output"/>
+<hr/>
+<div>Author: <a href="http://lindenb.github.io/">Pierre Lindenbaum PhD</a>.</div>
 </body>
 </html>

@@ -1,6 +1,21 @@
 
 
-
+function Term(term)
+	{
+	this.name=term;
+	this.children={};
+	}
+Term.prototype.toString=function()
+	{
+	var s=this.name;
+	s+="[";
+	for(var k in  this.children)
+		{
+		s+=" "+this.children[k];
+		}
+	s+="]";
+	return s;
+	}
 
 var OntBuilder={
 	history:[],
@@ -11,6 +26,17 @@ var OntBuilder={
 	currentFetchOnLoad:function()
 		{
 		alert(JSON.stringify(this.currentFetchResult));
+		},
+	firstElement:function(root,localName)
+		{
+		var ndList = root.childNodes; 
+		for(var i in ndList)
+			{
+			if(ndList[i].nodeType!=Node.ELEMENT_NODE) continue;
+			if(localName && ndList[i].localName!=localName) continue;
+			return ndList[i];
+			}
+		return null;
 		},
 	insertHtmlScript:function(scriptid,src)
 		{
@@ -27,7 +53,7 @@ var OntBuilder={
 		},
 	queryCategoryMembers:function(cmcontinue,term,callback)
 		{
-		this.insertHtmlScript("wp", "http://en.wikipedia.org/w/api.php?action=query&list=categorymembers&cmnamespace=14&cmlimit=10&format=json&cmtitle="+
+		this.insertHtmlScript("wp", "http://en.wikipedia.org/w/api.php?action=query&list=categorymembers&cmnamespace=14&cmlimit=2&format=json&cmtitle="+
 			encodeURIComponent(term)+
 			"&callback="+ encodeURIComponent(callback)+
 			(cmcontinue==null?"":"&cmcontinue="+cmcontinue)
@@ -79,15 +105,18 @@ var OntBuilder={
 	startup:function()
 		{
 		var form=null;
-		this.removeAllChildren("main").appendChild(form=this.cloneNode("startup"));
-		var button=this.xpathOne(".//button",form);
-		var input=this.xpathOne(".//input",form);
-		this.expand(document.getElementById("main"),input.value,button);
+		var mainE=this.removeAllChildren("main");
+		var button=document.getElementById("rootButton");
+		var input=document.getElementById("rootTerm");
+		if(input.value.trim().length==0) return;
+		this.expand(mainE,input.value,button);
 		},
 	expand:function(elementNode,term,button)
-		{
-		console.log("yyy"+term);
+		{		
 		var _this=this;
+		
+		elementNode.dataset["term"]=term;
+		
 		button.onclick=function(evt)
 			{
 			var callback_name="callback"+_this.id_generator++;
@@ -104,21 +133,26 @@ var OntBuilder={
 						{
 						cmcontinue=json["query-continue"]["categorymembers"]["cmcontinue"];
 						}
-	
+					/*if(elementNode===document.getElementById("main") )
+						{
+						_this.removeAllChildren("main");
+						}*/
 
 					var categories=json.query.categorymembers;	
 					
 					
-					var list=document.createElement("ul");
-					elementNode.appendChild(list);
-					
+					var ulist=_this.firstElement(elementNode,"ul");
+					if(ulist==null)
+						{
+						ulist=document.createElement("ul");
+						elementNode.appendChild(ulist);
+						}			
 					for(var i=0;i< categories.length;++i)
 						{
 						var cat=categories[i];
-						
 						var li=document.createElement("li");
-
-						list.appendChild(li);
+	
+						ulist.appendChild(li);
 					
 						var anchor=document.createElement("a");
 						anchor.appendChild(_this.text(cat.title));
@@ -126,7 +160,17 @@ var OntBuilder={
 						anchor.setAttribute("target","_blank");
 						li.appendChild(anchor);
 					
+						var validate=document.createElement("input");
+						validate.setAttribute("type","checkbox");
+						validate.setAttribute("value",cat.title);
+						validate.setAttribute("checked","true");
+						li.appendChild(validate);
+					
 						var b1=document.createElement("button");
+						b1.onclick=function(evt)
+							{
+							var old=evt.target.parentNode.parentNode.removeChild(evt.target.parentNode);
+							};
 						b1.appendChild(_this.text("[-]"));
 						li.appendChild(b1);
 					
@@ -134,7 +178,10 @@ var OntBuilder={
 						b2.appendChild(_this.text("[+]"));
 						li.appendChild(b2);
 						_this.expand(li,cat.title,b2);
-							
+						b2.addEventListener("click",function(evt)
+							{
+							var old=evt.target.parentNode.removeChild(evt.target);
+							});
 						
 						}
 					if( cmcontinue!=null)
@@ -149,19 +196,44 @@ var OntBuilder={
 				};
 			OntBuilder.jsonPCallbacks[callback_name]=callback;
 			
-			console.log("yyyy"+term);
+
 			_this.queryCategoryMembers(null,term,"OntBuilder.jsonPCallbacks."+callback_name+".onload");
 			};
 		},
-	execute:function()
+	build:function()
 		{
-		console.log("okkk");
+		if(arguments.length==0)
+			{
+			
+			var rootE=this.build(
+				null,
+				document.getElementById("main")
+				);
+			console.log(rootE);
+			return;
+			}
+			
+		
+		var parent=arguments[0];
+		var elementNode=arguments[1];
+		var term=null;
+	
+		if(elementNode.dataset && elementNode.dataset["term"])
+			{
+			term=new Term(elementNode.dataset["term"]);
+			if(parent!=null) parent.children[term.name]=term;
+			}
+		for(var n=elementNode.firstChild;n!=null;n=n.nextSibling)
+			{
+			this.build(term!=null?term:parent,n);
+			}
+		return parent==null?term:parent;
 		}
 	};
 
 
 window.addEventListener("load",function()
 	{
-	OntBuilder.init();
+	OntBuilder.startup();
 	},false);
 

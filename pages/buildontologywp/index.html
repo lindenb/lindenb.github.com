@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html  xmlns="http://www.w3.org/1999/xhtml">
 <head>
+   <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
+   <meta content="utf-8" http-equiv="encoding"></meta>
 
    <title>Build Ontology Wikipedia</title>
    <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
@@ -23,6 +25,14 @@
 
 
 <div>
+<div class="row">
+<div id="startup">
+<label for="rootTerm">Enter root Category</label>
+<input value="Category:Scientific exploration" placeholder="Category:" id="rootTerm"/>
+<button id="rootButton">OK</button>
+<button onclick="OntBuilder.build()">Build</button>
+</div>
+</div>
 
 <div class="row">
 <div id="main"/>
@@ -34,13 +44,8 @@ Author: <a href="https://github.com/lindenb/">Pierre Lindenbaum PhD</a>.
 </div>
 </div>
 
-<div style="display: none;">
-<div id="startup">
-<label>Enter root Category</label>
-<input value="Category:Science" placeholder="Category:"/>
-<button onclick="OntBuilder.execute()">OK</button>
-</div>
-</div>
+<div style="display: none;"/>
+
 
 </div>
 </body>

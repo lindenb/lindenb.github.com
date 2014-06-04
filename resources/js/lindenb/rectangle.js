@@ -26,6 +26,10 @@ function Rectangle()
 		throw "Runtime Error";
 		}
 	}
+Rectangle.prototype.toString=function()
+	{
+	return "{x:"+this.x+",y:"+this.y+",width:"+this.width+",height:"+this.height+"}";
+	};
 
 Rectangle.prototype.getMidX=function()
 	{
@@ -35,6 +39,16 @@ Rectangle.prototype.getMidX=function()
 Rectangle.prototype.getMidY=function()
 	{
 	return this.y + this.height/2.0;
+	};
+
+Rectangle.prototype.getMaxX=function()
+	{
+	return this.x + this.width;
+	};
+
+Rectangle.prototype.getMaxY=function()
+	{
+	return this.y + this.height;
 	};
 
 Rectangle.prototype.clone=function(ratio)
@@ -56,5 +70,16 @@ Rectangle.prototype.scaled=function(ratio)
 		x2 - w2/2.0,
 		y2 - h2/2.0,
 		w2, h2
+		);
+	};
+
+Rectangle.prototype.scaledY=function(ratio)
+	{
+	var y2=this.getMidY();
+	var h2=this.height*ratio;
+	return new Rectangle(
+		this.x,
+		y2 - h2/2.0,
+		this.width, h2
 		);
 	};
