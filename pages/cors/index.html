@@ -12,6 +12,26 @@
 var targetIndex=-1;
 var TARGETS=[
 	{
+		"name":"Ensembl REST",
+		"url":"http://rest.ensembl.org/xrefs/symbol/homo_sapiens/BRCA2?content-type=application/json;external_db=HGNC"
+	},
+	{
+		"name":"Ensembl Beta REST",
+		"url":"http://beta.rest.ensembl.org/xrefs/symbol/homo_sapiens/BRCA2?content-type=application/json"
+	},
+	{
+		"name":"EBI-eye REST",
+		"url":"http://www.ebi.ac.uk/ebisearch/ws/rest/uniprot/entry/WAP_RAT,WAP_MOUSE?format=json",
+	},
+	{
+		"name":"RNA Central",
+		"url":"http://rnacentral.org/api/v1/rna/URS0000000001/?flat=true"
+	},
+	{
+		"name":"RAID db",
+		"url":"http://www.rna-society.org/raid/api.php?type=keyword&&keywords=PTENP1&&interacttype=rri"
+	},
+	{
 		"name":"KEGG",
 		"url":"http://rest.kegg.jp/get/cpd:C01290+gl:G00092"
 	},
