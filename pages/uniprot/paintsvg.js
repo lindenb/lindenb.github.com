@@ -168,7 +168,7 @@ var PaintSVG={
 		var acn=document.getElementById("acn").value.trim();
 		var outputE=this.clear();
 		if(acn.length==0) return;
-		var url="http://www.uniprot.org/uniprot/"+acn+".xml";
+		var url="https://www.uniprot.org/uniprot/"+acn+".xml";
 		var xhr=this.createCORSRequest(url);
 		if(xhr==null)
 			{
@@ -177,7 +177,6 @@ var PaintSVG={
 			}
 		xhr.onload=function()
 			{
-			console.log("load");
 			var dom= xhr.responseXML;
 			var ndList = dom.documentElement.childElements("entry");
 			for(var i=0;i<ndList.length;++i)
