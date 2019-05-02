@@ -92,7 +92,7 @@ Feature.prototype.getURL=function()
 			var source=E.firstElement("source");
 			if(source==null) continue;
 			var dbRef=source.firstElement("dbReference");
-			
+			if(dbRef==null) continue;
 			if(dbRef.getAttribute("type")!="PubMed") continue;
 			
 			return "http://www.ncbi.nlm.nih.gov/pubmed/"+dbRef.getAttribute("id");
@@ -111,6 +111,7 @@ function UniProtEntry(root)
 	this.sequence=this.root.firstElement("sequence").textContent.replace(/[ \t\n\r]/g,"");
 	
 	var featArray=this.root.childElements("feature");
+	
 	for(var i=0;i<featArray.length;++i)
 		{
 		var feat=new Feature(this,featArray[i]);
