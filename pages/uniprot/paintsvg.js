@@ -92,7 +92,7 @@ Feature.prototype.getURL=function()
 			var source=E.firstElement("source");
 			if(source==null) continue;
 			var dbRef=source.firstElement("dbReference");
-			
+			if(dbRef==null) continue;
 			if(dbRef.getAttribute("type")!="PubMed") continue;
 			
 			return "http://www.ncbi.nlm.nih.gov/pubmed/"+dbRef.getAttribute("id");
@@ -111,6 +111,7 @@ function UniProtEntry(root)
 	this.sequence=this.root.firstElement("sequence").textContent.replace(/[ \t\n\r]/g,"");
 	
 	var featArray=this.root.childElements("feature");
+	
 	for(var i=0;i<featArray.length;++i)
 		{
 		var feat=new Feature(this,featArray[i]);
@@ -168,7 +169,7 @@ var PaintSVG={
 		var acn=document.getElementById("acn").value.trim();
 		var outputE=this.clear();
 		if(acn.length==0) return;
-		var url="http://www.uniprot.org/uniprot/"+acn+".xml";
+		var url="https://www.uniprot.org/uniprot/"+acn+".xml";
 		var xhr=this.createCORSRequest(url);
 		if(xhr==null)
 			{
@@ -177,7 +178,6 @@ var PaintSVG={
 			}
 		xhr.onload=function()
 			{
-			console.log("load");
 			var dom= xhr.responseXML;
 			var ndList = dom.documentElement.childElements("entry");
 			for(var i=0;i<ndList.length;++i)
